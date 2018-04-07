@@ -1,5 +1,22 @@
-+b("header")
-  position: relative
-  z-index: z("default")
+$header-title: ('default': 30px, 'xs': 45px, 'sm': 55px, 'md': 65px, 'lg': 75px)
 
-  //@include bg('');
+$header-content: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
+
++b("header")
+	+relative
+	
+	
+
+	+e('row')
+		+min(sm)
+			align-items: center
+
+	+e('title')
+		line-height: 1.1
+		font-family: $bold
+		+fs-simple($header-title)
+
+	+e('content')
+		line-height: 1.2
+		margin-top: 30px
+		+fs-simple($header-content)
