@@ -1,15 +1,19 @@
 <header class="header">
 	<div class="container">
-		<div class="row header__row">
-			<div class="col-12 col-sm-5">
+		<div class="row header__row header__row_reverse">
+			<div class="col-12 col-md-7">
+				<div class="header__content">
+					<h1 class="header__title color-brand-2">{{post.get_field('section_1_title')}}</h1>
+					<p class="header__place">{{post.get_field('section_1_address')}}</p>
+					<div class="header__text">{{post.get_field('section_1_text')}}</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
 				<div class="header__image">
 					<img src="{{TimberImage(post.get_field('section_1_image')).src}}" alt="">
 				</div>
 			</div>
-			<div class="col-12 col-sm-7">
-				<h1 class="header__title color-brand-2">{{post.get_field('section_1_title')}}</h1>
-				<div class="header__content">{{post.get_field('section_1_text')}}</div>
-			</div>
+
 		</div>
 	</div>
 </header>
