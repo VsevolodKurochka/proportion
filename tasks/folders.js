@@ -5,7 +5,7 @@
 
 const folders = {
 	build: 'assets',
-	src: 'src'
+	src: 'static'
 };
 
 
