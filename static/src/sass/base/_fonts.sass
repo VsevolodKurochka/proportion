@@ -1,15 +1,19 @@
 // Connect fonts
-=connect-font($font, $class_name: $font, $fileType: otf)
-  @font-face
-    font-family: $font
-    src: local("#{$font}"), url(../fonts/#{$font}.#{$fileType})
+@font-face
+  font-family: 'BloggerSansBold'
+  src: url("../fonts/BloggerSans-Bold.eot")
+  src: url("../fonts/BloggerSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/BloggerSans-Bold.woff") format("woff"), url("../fonts/BloggerSans-Bold.ttf") format("truetype"), url("../fonts/BloggerSans-Bold.svg#BloggerSans-Bold") format("svg")
+  font-style: normal
+  font-weight: bold
+  text-rendering: optimizeLegibility
 
-  @if $class_name != null
-    .#{$class_name}
-      font-family: $font
-  @else
-    .#{$font}
-      font-family: $font
+@font-face
+  font-family: 'BloggerSans'
+  src: url("../fonts/BloggerSans.eot")
+  src: url("../fonts/BloggerSans.eot?#iefix") format("embedded-opentype"), url("../fonts/BloggerSans.woff") format("woff"), url("../fonts/BloggerSans.ttf") format("truetype"), url("../fonts/BloggerSans.svg#BloggerSans") format("svg")
+  font-style: normal
+  font-weight: normal
+  text-rendering: optimizeLegibility
 
 .font-general
-  font-family: 'Roboto', sans-serif
+  font-family: 'BloggerSans'

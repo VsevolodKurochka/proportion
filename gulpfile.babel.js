@@ -26,10 +26,12 @@ gulp.task(
 		serve,
 		'sass',
 		'scripts',
+		'fonts',
 		'concat',
 		'image',
 		'sass:watch',
 		'scripts:watch',
+		'fonts:watch',
 		'concat:watch',
 		'image:watch'
 	)
@@ -43,7 +45,8 @@ gulp.task(
 		gulp.parallel(
 			'sass',
 			'scripts',
-			'image'
+			'image',
+			'fonts'
 		)
 	)
 );

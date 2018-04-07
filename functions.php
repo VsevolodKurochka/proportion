@@ -27,15 +27,18 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'menus' );
+		
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-		//add_action( 'init', array( $this, 'register_post_types' ) );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
 
 		add_filter('upload_mimes', array($this, 'cc_mime_types'));
+
+		$this->add_options_page();
+
+		$this->generate_menu();
 
 		parent::__construct();
 	}
@@ -62,18 +65,23 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+
+		$context['options'] = get_fields('option');
 		$context['logo'] = get_custom_logo();
 		return $context;
 	}
 
-	function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
+	function generate_menu() {
+		add_theme_support( 'menus' );
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'videooperator' ),
+		) );
+	}
+
+	function add_options_page() {
+		acf_add_options_page();
 	}
 
 	function add_to_twig( $twig ) {

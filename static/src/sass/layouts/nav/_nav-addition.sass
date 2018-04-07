@@ -9,7 +9,15 @@
 			color: inherit
 			text-decoration: none
 			color: $color-black
-			font-weight: bold
+			font-size: 14px
+			font-family: $bold
+			+transition
+	
+			&:hover
+				color: $color-brand-1
+
+			+min(md)
+				font-size: 16px
 
 
 		+ee("toggle")
@@ -34,6 +42,25 @@
 
 				&:last-child
 					margin-right: 0
+
+		+ee('phones')
+			+relative
+			display: inline-block
+			vertical-align: middle
+			
+			+min(md)
+				padding-right: 30px
+				margin-right: 25px
+				&:before
+					content: ''
+					+absolute(50%, 0)
+					transform: translateY(-50%)
+					+size(18px, 32px)
+					+bg('../img/icon.svg')
+
+		+ee('btn')
+			display: inline-block
+			vertical-align: middle
 
 
 		+max(md)
