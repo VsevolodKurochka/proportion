@@ -11,7 +11,7 @@ if ( ! class_exists( 'Timber' ) ) {
 	});
 	
 	add_filter('template_include', function($template) {
-		return get_stylesheet_directory() . '/static/no-timber.html';
+		return get_stylesheet_directory() . '/no-timber.html';
 	});
 	
 	return;
@@ -25,6 +25,7 @@ class StarterSite extends TimberSite {
 
 	function __construct() {
 		add_theme_support( 'post-formats' );
+		add_theme_support( 'custom-logo' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -32,7 +33,9 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		//add_action( 'init', array( $this, 'register_post_types' ) );
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'seva_portfolio_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+
+		add_filter('upload_mimes', array($this, 'cc_mime_types'));
 
 		parent::__construct();
 	}
@@ -44,7 +47,7 @@ class StarterSite extends TimberSite {
 	function register_scripts() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-		wp_enqueue_style( 'css', get_template_directory_uri() . '/assets/build/css/style.css' );
+		wp_enqueue_style( 'proportion-css', get_template_directory_uri() . '/static/build/css/style.css' );
 
 		//wp_enqueue_script( 'libs', get_template_directory_uri() . '/assets/js/libs.min.js', array(), '20151215', true );
 
@@ -53,12 +56,18 @@ class StarterSite extends TimberSite {
 		//wp_enqueue_script( 'vanilla-scripts', get_template_directory_uri() . '/assets/js/vanilla.main.js', array(), '20151215', true );
 	}
 
+	function cc_mime_types($mimes) {
+	  $mimes['svg'] = 'image/svg+xml';
+	  return $mimes;
+	}
+
 	function add_to_context( $context ) {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+		$context['logo'] = get_custom_logo();
 		return $context;
 	}
 
