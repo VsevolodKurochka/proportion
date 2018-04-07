@@ -4,8 +4,8 @@
  */
 
 const folders = {
-	build: 'assets',
-	src: 'static'
+	build: 'static/build',
+	src: 'static/src'
 };
 
 
