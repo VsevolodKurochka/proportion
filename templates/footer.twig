@@ -1,1 +1,18 @@
-Copyright {{"now"|date('Y')}}
+<div class="container footer__container">
+	<div class="row">
+		<div class="col-12 col-sm-4">
+			<img src={{options.footer_logo}} class="footer__logo" alt="Footer logo">
+			<ul class="footer__social">
+				{% for social in options.social %}
+					<li>
+						<a href={{social.link}}>
+							<img src={{social.icon}} alt="Social link">
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-12 col-sm-4"></div>
+		<div class="col-12 col-sm-4"></div>
+	</div>
+</div>

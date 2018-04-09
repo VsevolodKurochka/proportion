@@ -1,0 +1,30 @@
++b('benefits')
+
+	+e('row')
+		margin-bottom: 45px
+
+		+min(md)
+			margin-bottom: 60px
+
++b('benefit')
+
+	text-align: center
+
+	+e('number')
+		font-family: $bold
+		line-height: 1
+		font-size: 54px
+
+	+e('title')
+		+relative
+		font-family: $bold
+		font-size: 24px
+		padding-bottom: 5px
+		margin-bottom: 15px
+
+		&:before
+			content: ''
+			+absolute(null, null, 0, 50%)
+			+size(100px, 2px)
+			transform: translateX(-50%)
+			background-color: $color-brand-1
