@@ -4,25 +4,31 @@ $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 
 +b('banner-form')
 	+relative
-	padding: 15px
+	padding: 80px 15px 30px 15px
 	border-radius: $radius
 	background-color: transparentize(#fff, 0.3)
 	box-shadow: $shadow
+
+	+m('transparent')
+		background-color: transparentize(#fff, 0.8)
 
 	+min(sm)
 		padding: 45px 30px
 
 	+e('tag')
+		+absolute(-10px, -10px)
+		padding: 10px
 		background-color: #fff
 		box-shadow: $shadow
 		border-radius: $radius
-		font-size: 20px
-		padding: 10px
+		font-size: 17px
+		color: $color-black
 		text-align: center
 		line-height: 1.1
 
-		+min(sm)
-			+absolute(-30px, -30px)
+		+min(md)
+			top: -30px
+			right: -30px
 
 		+min(md)
 			padding: 25px 15px
@@ -32,7 +38,7 @@ $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 		strong
 			font-family: $bold
 			color: $color-brand-1
-			font-size: 24px
+			font-size: 20px
 			+min(md)
 				font-size: 26px
 
@@ -46,8 +52,14 @@ $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 
 	+e('content')
 		+ee('elements')
-			+min(sm)
+			
+			+max(sm)
+				.wpcf7-form-control-wrap:not(:last-child)
+					margin-bottom: 15px
 
+			+min(sm)
+				display: flex
+				flex-flow: row wrap
 				.wpcf7-form-control-wrap
 					padding-left: 15px
 					padding-right: 15px

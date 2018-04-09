@@ -1,9 +1,9 @@
-<?php function banner_form($title, $form = null) {
+<?php function banner_form($title, $form = null, $class = null) {
 	if($form === null){
 		$form = '';
 	}
 ?>
-	<div class="banner-form">
+	<div class="banner-form <?php echo $class; ?>">
 		<div class="banner-form__tag">
 			<?php echo get_field('banner_form_tag', 'option'); ?>
 		</div>

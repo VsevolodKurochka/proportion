@@ -1,0 +1,42 @@
++b('background')
+	+relative
+	+padding-y(30px)
+	z-index: 1
+	color: #fff
+
+	&:before
+		content: ''
+		+absolute(0, null, null, 0)
+		+size(100%)
+		background-color: transparentize($color-black, 0.2)
+		z-index: -1
+
+	+min(sm)
+		+padding-y(60px)
+
+	+m('large')
+		+padding-y(45px)
+
+		+min(sm)
+			+padding-y(90px)
+
+		+min(md)
+			+padding-y(120px)
+	
+	+e('title')
+		text-align: center
+		margin-bottom: 45px
+
+		+min(md)
+			margin-bottom: 60px
+
+	+e('banner')
+
+		+ee('row')
+
+			+min(lg)
+				justify-content: center
+
+	+min(lg)
+		@media only screen
+			background-attachment: fixed

@@ -1,6 +1,10 @@
 +b('pride')
 	+padding-y(45px)
 
+	+e('row')
+		+min(sm)
+			align-items: center
+
 	+e('title')
 		strong
 			color: $color-brand-1
@@ -14,12 +18,68 @@
 
 		font-size: 20px
 
+		+text(15px)
+
 		+min(sm)
 			font-size: 24px
 
 		+min(md)
-			font-size: 28px
+			padding-right: 45px
+			font-size: 25px
 
-	+e('row')
-		+min(sm)
-			align-items: center
+	+e('carousel')
+
+		.owl
+
+			&-item
+
+				&:before
+					content: ''
+					+absolute(50%, null, null, 50%)
+					+size(95%)
+					border: 1px solid #fff
+					transform: translate(-50%, -50%)
+
+			&-nav
+				+absolute(50%, null, null, 0)
+				transform: translateY(-50%)
+				width: 100%
+
+			&-prev,
+			&-next
+				+absolute(50%)
+				transform: translateY(-50%)
+				+size(60px)
+				border: none
+				background-color: $color-brand-1
+				border-radius: 100%
+				box-shadow: 0px 10px 18px 0px rgba(207, 17, 140, 0.51)
+				+transition
+				user-select: none
+				outline: none
+
+				&:before
+					content: ''
+					+absolute(50%, null, null, 50%)
+					
+					+size(13px, 16px)
+					margin-left: -6.5px
+					margin-top: -8px
+
+					+bg('../img/icon-play.svg')
+
+				&:hover
+					background-color: darken($color-brand-1, 5%)
+					box-shadow: none
+
+			&-prev
+				&:before
+					transform: scaleX(-1)
+
+				+min(md)
+					left: -25px
+
+			&-next
+				right: 0
+				+min(md)
+					right: -25px

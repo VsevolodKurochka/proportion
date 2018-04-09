@@ -11,5 +11,11 @@ $(document).ready(function(){
 		scroll($( $(this).attr('href') ), 1500);
 	});
 
-	
+	$("#pride-carousel").owlCarousel({
+		items: 1,
+		nav: true,
+		navText: ['', ''],
+		dots: false,
+		loop: true
+	});
 });	
