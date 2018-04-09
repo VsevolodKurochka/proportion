@@ -74,3 +74,21 @@
 
 		+e('image')
 			height: 100px
+
+	&_left
+
+		display: flex
+		align-items: center
+		flex-flow: row wrap
+
+	&_left &
+
+		+e('header')
+			margin-right: 20px
+
+		+e('image')
+			width: 70px
+
+		+e('content')
+			font-family: $bold
+			flex: 1
