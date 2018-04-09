@@ -5,11 +5,10 @@
 ?>
 	<div class="banner-form">
 		<div class="banner-form__tag">
-			<p>Скидка -20%</p>
-			<p>на 1-й заказ!</p>
+			<?php echo get_field('banner_form_tag', 'option'); ?>
 		</div>
 		<div class="banner-form__header">
-			<p><?php echo $title; ?></p>
+			<?php echo $title; ?>
 		</div>
 		<div class="banner-form__content">
 			<?php echo do_shortcode($form); ?>

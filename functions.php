@@ -10,6 +10,17 @@ require get_template_directory() . '/tgm/connect.php';
  */
 require get_template_directory() . '/inc/theme-functions.php';
 
+add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
+ 
+function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
+  $my_attr = 'button-hidden-text';
+
+  if ( isset( $atts[$my_attr] ) ) {
+      $out[$my_attr] = $atts[$my_attr];
+  }
+
+  return $out;
+}
 
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {

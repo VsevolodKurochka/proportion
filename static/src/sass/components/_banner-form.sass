@@ -1,0 +1,59 @@
+$banner-form-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
+$radius: 4px
+$shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
+
++b('banner-form')
+	+relative
+	padding: 15px
+	border-radius: $radius
+	background-color: transparentize(#fff, 0.3)
+	box-shadow: $shadow
+
+	+min(sm)
+		padding: 45px 30px
+
+	+e('tag')
+		background-color: #fff
+		box-shadow: $shadow
+		border-radius: $radius
+		font-size: 20px
+		padding: 10px
+		text-align: center
+		line-height: 1.1
+
+		+min(sm)
+			+absolute(-30px, -30px)
+
+		+min(md)
+			padding: 25px 15px
+			font-size: 24px
+
+
+		strong
+			font-family: $bold
+			color: $color-brand-1
+			font-size: 24px
+			+min(md)
+				font-size: 26px
+
+		
+
+	+e('header')
+		text-align: center
+		line-height: 1.1
+		margin-bottom: 30px
+		+fs-simple($banner-form-text)
+
+	+e('content')
+		+ee('elements')
+			+min(sm)
+
+				.wpcf7-form-control-wrap
+					padding-left: 15px
+					padding-right: 15px
+					width: 30%
+					&.your-submit
+						flex: 2
+
+	.wpcf7-form .ajax-loader
+		display: none
