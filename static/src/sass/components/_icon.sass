@@ -39,3 +39,38 @@
 
 			+min(md)
 				font-size: 24px
+	
+	&_step
+		+relative
+
+		+min(sm)
+
+			&:before
+				content: ''
+				+absolute(60px, 0)
+				+size(66px, 32px)
+				+bg('../img/icon-arrow-right.svg')
+				opacity: 0.05
+
+
+	&-column:last-child &_step
+
+		&:before
+			display: none
+
+	&_step &
+
+		+e('header')
+			+relative
+			margin-bottom: 30px
+			text-align: center
+
+			&:before
+				+absolute(null, null, 0, 0)
+				color: $color-brand-2
+				font-size: 48px
+				font-family: $bold
+				line-height: 1
+
+		+e('image')
+			height: 100px

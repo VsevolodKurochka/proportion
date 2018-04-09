@@ -1,0 +1,18 @@
+<section class="health">
+	<div class="container">
+		<div class="health__header text-center">
+			<h3 class="title-lg color-brand-2">{{post.get_field('section_7_title')}}</h3>
+			<h4 class="title-sm">{{post.get_field('section_7_subtitle')}}</h4>
+		</div>
+		<div class="row health__row">
+			{% for step in post.get_field('section_7_steps') %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_step health__icon">
+						<div class="icon__header"><img class="icon__image" src={{step.image}} alt=""></div>
+						<div class="icon__content">{{step.text}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

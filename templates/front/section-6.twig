@@ -1,0 +1,22 @@
+<section class="background background_large effects" style="background-image: url( {{ post.get_field('section_6_image') }} );">
+	<div class="container">
+		<h3 class="title-lg background__title">{{post.get_field('section_6_title')}}</h3>
+		
+		<div class="row effects__row">
+			{% for effect in post.get_field('section_6_icons') %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_left">
+						<div class="icon__header"><img class="icon__image" src={{effect.image}} alt=""></div>
+						<div class="icon__content">{{effect.title}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="row background__banner-row">
+			<div class="col-12 col-lg-10">
+				{{ function('banner_form', post.get_field('section_6_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Выбрать и заказать услугу"]', 'banner-form_transparent' )}}
+			</div>
+		</div>
+	</div>
+</section>
