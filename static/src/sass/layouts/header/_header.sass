@@ -11,6 +11,8 @@ $header-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
 		+fs-simple($header-title)
 	
 	+e('content')
+		+relative
+
 		+min(md)
 			margin-top: 75px
 
@@ -23,3 +25,20 @@ $header-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
 		+m('reverse')
 			+min(md)
 				flex-direction: row-reverse
+
+	+e('place')
+		+relative
+		padding-left: 45px
+		font-family: $bold
+		color: $color-brand-2
+		font-size: 30px
+		line-height: 1
+
+		&:before
+			content: ''
+			+absolute(-1px, null, null, 0)
+			+size(22px, 26px)
+			+bg('../img/icon-map-marker.svg')
+
+		+min(sm)
+			+absolute(25px, 110px)
