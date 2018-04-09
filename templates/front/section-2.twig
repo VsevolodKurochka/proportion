@@ -1,0 +1,21 @@
+<section class="pride">
+	<div class="container">
+		<div class="row pride__row">
+			<div class="col-12 col-sm-6">
+				<div class="pride__content">
+					<h3 class="title-md pride__title">{{post.get_field('section_2_title')}}</h3>
+					<div class="pride__text">
+						{{post.get_field('section_2_text')}}
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6">
+				<div class="owl-carousel" id="pride-carousel">
+					{% for slide in post.get_field('section_2_slider') %}
+						<img src={{slide.url}} alt="">
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
