@@ -1,0 +1,17 @@
+<section class="target">
+	<img src={{post.get_field('section_5_image')}} class="target__bg">
+	<div class="container">
+		<h3 class="title-md color-brand-2 target__title">{{post.get_field('section_5_title')}}</h3>
+		<div class="row">
+			{% for target in post.get_field('section_5_targets') %}
+				<div class="target__item col-12 col-sm-6">
+					<div class="target__item-inner">
+						<div class="target__item-content">
+							{{target.text}}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
