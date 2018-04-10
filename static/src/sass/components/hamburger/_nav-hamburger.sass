@@ -7,14 +7,14 @@ $hamburger-line-width: 100%
 $hamburger-line-height: 4px
 $hamburger-line-radius: 4px
 
-+b('hamburger')
-	@at-root
-		%hamburger-format
-			display: inline-block
-			vertical-align: middle
+%hamburger-format
+	display: inline-block
+	vertical-align: middle
 
-		%hamburger-transition
-			transition: .25s ease-in-out
+%hamburger-transition
+	transition: .25s ease-in-out
+
++b('hamburger')
 
 	margin-right: 15px
 	padding: 0
@@ -25,14 +25,14 @@ $hamburger-line-radius: 4px
 	-webkit-tap-highlight-color: transparent
 	cursor: pointer
 	z-index: 100
-	+relative
+	position: relative
 
 	@extend %hamburger-transition
 
 	@extend %hamburger-format
 
 	&__lines
-		+relative
+		position: relative
 
 		+size($hamburger-width, $hamburger-height)
 
@@ -61,5 +61,5 @@ $hamburger-line-radius: 4px
 
 		@extend %hamburger-format
 
-	+min(md)
+	+min($md)
 		display: none

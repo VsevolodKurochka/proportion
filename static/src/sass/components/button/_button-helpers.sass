@@ -23,50 +23,39 @@ $btn-static: ("white": ($color-white, $color-brand-1), "brand-1": ($color-brand-
 $btn-border: ("brand-1": ($color-brand-1, $color-brand-2))
 
 =btn-size($btn-padding, $btn-font-size)
-  padding: $btn-padding
-  font-size: $btn-font-size
+	padding: $btn-padding
+	font-size: $btn-font-size
 
 =btn-static($btn-background, $btn-color)
-  background-color: $btn-background
-  color: $btn-color
-
-  &:before
-    background-color: darken($btn-background, 15%)
+	background-color: $btn-background
+	color: $btn-color
 
 =btn-border($btn-border-color, $btn-color)
-  border-color: $btn-border-color
-  color: $btn-color
-
-  &:before
-    background-color: $btn-border-color
+	border-color: $btn-border-color
+	color: $btn-color
 
 //-
 //- Mixin for iteration button
 //-
-=btn-static-iteration
-  @each $name, $values in $btn-static
-    $btn-bg: nth($values, 1)
-    $btn-color: nth($values, 2)
 
-    &_#{$name}
-      +btn-static($btn-bg, $btn-color)
+// =btn-static-iteration()
+// 	@each $name, $values in $btn-static
+// 		$btn-bg: nth($values, 1)
+// 		$btn-color: nth($values, 2)
 
-      &-simple
-        &:hover
-          background-color: darken($btn-bg, 15%)
+// 		&_#{$name}
+// 			+btn-static($btn-bg, $btn-color)
 
-=btn-border-iteration
-  @at-root %vbtn-border
-    border-width: $btn-border-width
-    border-style: $btn-border-style
+// =btn-border-iteration()
 
-  @each $name, $values in $btn-border
-    $btn-border-color: nth($values, 1)
-    $btn-color: nth($values, 2)
+// 	@each $name, $values in $btn-border
+// 		$btn-border-color: nth($values, 1)
+// 		$btn-color: nth($values, 2)
 
-    &_border-#{$name}
-      @extend %vbtn-border
+// 		&_border-#{$name}
+// 			border-width: $btn-border-width
+// 			border-style: $btn-border-style
 
-      background-color: transparent
+// 			background-color: transparent
 
-      +btn-border($btn-border-color, $btn-color)
+// 			+btn-border($btn-border-color, $btn-color)

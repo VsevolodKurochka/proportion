@@ -1,23 +1,21 @@
-+b('health')
+.health
 
 	+padding-y(45px)
 
-	+e('header')
+	&__header
 		margin-bottom: 30px
 
-		+min(md)
+		+min($md)
 			margin-bottom: 45px
 
-		+min(lg)
+		+min($lg)
 			margin-bottom: 75px
 
-	+e('row')
+	&__row
 
 		counter-reset: health
 
-	+e('icon')
-		+b('icon')
-			+e('header')
-				&:before
-					counter-increment: health
-					content: "#" counter(health) ":"
+	&__icon .icon__header
+		&:before
+			counter-increment: health
+			content: "#" counter(health) ":"

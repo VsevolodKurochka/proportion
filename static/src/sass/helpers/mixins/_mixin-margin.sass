@@ -18,10 +18,12 @@
 /// @param {Length} $right [null] - Right margin
 /// @param {Length} $left [$right] - Left margin
 =margin-x($right, $left: $right)
-	+margin(null, $right, null, $left)
+	margin-right: $right
+	margin-left: $left
 
 /// Margin Vertical
 /// @param {Length} $top [null] - Top margin
 /// @param {Length} $bottom [$top] - Bottom margin
 =margin-y($top, $bottom: $top)
-	+margin($top, null, $bottom, null)
+	margin-top: $top
+	margin-bottom: $bottom

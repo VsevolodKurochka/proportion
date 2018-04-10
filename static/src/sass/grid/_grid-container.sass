@@ -1,15 +1,21 @@
 /// Container width.
 $container-width: (sm: 750px, md: 970px, lg: 1170px)
 
-+b('container')
-  +relative
+.container
+	//position: relative
 
-  +margin-x(auto)
+	+margin-x(auto)
 
-  min-height: 1px
+	min-height: 1px
 
-  +padding-x(getComp(gutter))
+	padding-left: 15px
+	padding-right: 15px
 
-  @each $c-resp, $container_value in $container-width
-    +min($c-resp)
-      width: $container_value
+	+min($sm)
+		width: $sm - 30px
+
+	+min($md)
+		width: $md - 30px
+
+	+min($lg)
+		width: $lg - 30px

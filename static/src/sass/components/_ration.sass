@@ -1,35 +1,35 @@
-+b('ration')
+.ration
 
 	margin-bottom: 30px
 
-	+e('header')
-		+relative
+	&__header
+		position: relative
 		+size(160px)
 
-	+e('image')
+	&__image
 		+absolute(0, null, null, 0)
 		+size(100%)
 		object-fit: cover
 	
-	+e('body')
+	&__body
 		padding: 30px
 
-	+e('title')
+	&__title
 		font-family: $bold
 		font-size: 22px
 		margin-bottom: 10px
 
-		+min(md)
+		+min($md)
 			font-size: 24px
 	
 	&_light &__body
 		color: $color-white
 		background-color: transparentize($color-white, 0.75)
 
-	+min(sm)
+	+min($sm)
 
-		+e('inner')
+		&__inner
 			display: flex
 
-		+e('body')
+		&__body
 			flex: 1

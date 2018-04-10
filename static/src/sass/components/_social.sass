@@ -1,15 +1,15 @@
-+b('social')
+.social
 
 	list-style: none
 
-	+e('item')
+	&__item
 		display: inline-block
 		vertical-align: middle
 		&:not(:last-child)
 			margin-right: 10px
 
-	+e('link')
-		+relative
+	&__link
+		position: relative
 		display: inline-block
 		+size(35px)
 		border-radius: 100%
@@ -22,7 +22,7 @@
 		&:hover
 			background-color: $color-brand-2
 
-	+e('image')
+	&__image
 		display: inline-block
 		vertical-align: middle
 		width: 15px

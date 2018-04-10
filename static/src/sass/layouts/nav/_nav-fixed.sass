@@ -1,15 +1,15 @@
-+b("fixed")
-  position: fixed
-  width: 100%
-  top: 0
-  left: 0
-  z-index: z("fixed")
-  min-height: 56px
+.fixed
+	position: fixed
+	width: 100%
+	top: 0
+	left: 0
+	z-index: 10
+	min-height: 56px
 
-  +max(md)
-    & + .site
-      margin-top: 56px
+	+max($md)
+		.fixed + .site
+			margin-top: 56px
 
-  +min(md)
-  	& + .site
-  		margin-top: 50px
+	+min($md)
+		.fixed + .site
+			margin-top: 50px

@@ -10,6 +10,10 @@ require get_template_directory() . '/tgm/connect.php';
  */
 require get_template_directory() . '/inc/theme-functions.php';
 
+
+// Include the class (unless you are using the script as a plugin)
+require_once( 'wp-sass/wp-sass.php' );
+
 add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
  
 function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
@@ -94,7 +98,13 @@ class StarterSite extends TimberSite {
 	function register_scripts() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-		wp_enqueue_style( 'css', get_template_directory_uri() . '/static/build/css/style.css' );
+		//wp_enqueue_style( 'style-sass-2', get_template_directory_uri() . '/style-sass.sass' );
+
+		wp_enqueue_style( 'style-fonts', get_template_directory_uri() . '/static/src/fonts/connect-fonts.css' );
+
+		wp_enqueue_style( 'style-sass-12', get_template_directory_uri() . '/static/src/sass/style.sass' );
+
+		//wp_enqueue_style( 'css', get_template_directory_uri() . '/static/build/css/style.css' );
 
 		if( is_page_template('template-front-page.php') ) {
 			wp_enqueue_style( 'owl-css', get_template_directory_uri() . '/static/build/css/vendor/carousel/carousel.css' );

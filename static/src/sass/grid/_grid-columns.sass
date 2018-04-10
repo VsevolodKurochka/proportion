@@ -1,45 +1,35 @@
 $themeColumn: "col"
 
-=flexColumnWidth($value)
-	flex-basis: $value
-	max-width: $value
-
 =make-column($class: null)
-	@for $i from 1 through getComp(columns)
-		$defaultValue: getComp(width) / getComp(columns) * $i
+	@for $i from 1 through 12
+		$defaultValue: 100% / 12 * $i
 
 		@if $class != null
-			+b(unquote($themeColumn) - $class - $i)
-				+flexColumnWidth($defaultValue)
+			.#{unquote($themeColumn) - $class - $i}
+				flex-basis: $defaultValue
+				max-width: $defaultValue
 		@else
-			+b(unquote($themeColumn) - $i)
-				+flexColumnWidth($defaultValue)
+			.#{unquote($themeColumn) - $i}
+				flex-basis: $defaultValue
+				max-width: $defaultValue
 
 +make-column()
 
-+min(xs)
++min($xs)
 	+make-column(xs)
 
-+min(sm)
++min($sm)
 	+make-column(sm)
 
-+min(md)
++min($md)
 	+make-column(md)
 
-+min(lg)
++min($lg)
 	+make-column(lg)
 
 
-@if getComp(flex) == true
-	[class*=#{$themePrefix}#{$themeColumn}-]
-		flex-grow: 0
-		flex-shrink: 0
-		+padding-x(getComp(gutter))
-@else
-	[class*=#{$themePrefix}#{$themeColumn}-]
-		position: relative
-		min-height: 1px
-
-		+padding-x(getComp(gutter))
-
-		float: left
+[class*=#{$themePrefix}#{$themeColumn}-]
+	flex-grow: 0
+	flex-shrink: 0
+	padding-left: 15px
+	padding-right: 15px

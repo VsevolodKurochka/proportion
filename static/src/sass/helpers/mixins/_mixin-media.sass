@@ -7,19 +7,11 @@
 /// Responsive manager
 =min($breakpoint)
 	// If the key exists in the map
-	@if map-has-key($breakpoints, $breakpoint)
-		// Prints a media query based on the value
-		@media (min-width: map-get($breakpoints, $breakpoint))
-			@content
-	@else
-		@error "No value found for `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map."
+	@media (min-width: $breakpoint)
+		@content
 
 /// Responsive manager
 =max($breakpoint)
 	// If the key exists in the map
-	@if map-has-key($breakpoints, $breakpoint)
-		// Prints a media query based on the value
-		@media (max-width: map-get($breakpoints, $breakpoint) - 1px)
-			@content
-	@else
-		@error "No value found for `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map."
+	@media (max-width: $breakpoint )
+		@content

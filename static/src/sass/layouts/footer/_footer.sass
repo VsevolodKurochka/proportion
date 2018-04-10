@@ -1,5 +1,6 @@
-+b('footer')
-	+padding-y(30px)
+.footer
+	padding-top: 30px
+	padding-bottom: 30px
 	font-size: 16px
 	color: #828282
 	background-color: #191919
@@ -9,20 +10,20 @@
 		color: inherit
 		text-decoration: none
 
-	+e('logo')
+	&__logo
 		width: 150px
 		margin-bottom: 15px
 
-	+e('phones')
+	&__phones
 		margin-bottom: 10px
 
-	+e('phone')
+	&__phone
 
 		+transition
 
 		&:hover
 			color: $color-brand-1
 
-	+e('row')
-		+min(sm)
+	&__row
+		+min($sm)
 			align-items: center

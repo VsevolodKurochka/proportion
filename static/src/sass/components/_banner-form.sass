@@ -1,21 +1,20 @@
-$banner-form-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
 $radius: 4px
 $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 
-+b('banner-form')
-	+relative
+.banner-form
+	position: relative
 	padding: 80px 15px 30px 15px
 	border-radius: $radius
 	background-color: transparentize(#fff, 0.3)
 	box-shadow: $shadow
 
-	+m('transparent')
+	&_transparent
 		background-color: transparentize(#fff, 0.8)
 
-	+min(sm)
+	+min($sm)
 		padding: 45px 30px
 
-	+e('tag')
+	&__tag
 		+absolute(-10px, -10px)
 		padding: 10px
 		background-color: #fff
@@ -26,11 +25,11 @@ $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 		text-align: center
 		line-height: 1.1
 
-		+min(md)
+		+min($md)
 			top: -30px
 			right: -30px
 
-		+min(md)
+		+min($md)
 			padding: 25px 15px
 			font-size: 24px
 
@@ -39,33 +38,36 @@ $shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 			font-family: $bold
 			color: $color-brand-1
 			font-size: 20px
-			+min(md)
+			+min($md)
 				font-size: 26px
 
-		
-
-	+e('header')
+	&__header
 		text-align: center
 		line-height: 1.1
 		margin-bottom: 30px
-		+fs-simple($banner-form-text)
+		
+		font-size: 20px
+		+min($xs)
+			font-size: 22px
+		+min($sm)
+			font-size: 24px
+		+min($md)
+			font-size: 28px
 
-	+e('content')
-		+ee('elements')
-			
-			+max(sm)
-				.wpcf7-form-control-wrap:not(:last-child)
-					margin-bottom: 15px
+	&__content-elements
+		+max($sm_max)
+			.wpcf7-form-control-wrap:not(:last-child)
+				margin-bottom: 15px
 
-			+min(sm)
-				display: flex
-				flex-flow: row wrap
-				.wpcf7-form-control-wrap
-					padding-left: 15px
-					padding-right: 15px
-					width: 30%
-					&.your-submit
-						flex: 2
+		+min($sm)
+			display: flex
+			flex-flow: row wrap
+			.wpcf7-form-control-wrap
+				padding-left: 15px
+				padding-right: 15px
+				width: 30%
+				&.your-submit
+					flex: 2
 
 	.wpcf7-form .ajax-loader
 		display: none

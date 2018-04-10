@@ -1,14 +1,34 @@
 // Variables
-@import 'helpers/variables/*'
+@import 'helpers/variables/var-colors'
+@import 'helpers/variables/var-dependencies'
+@import 'helpers/variables/var-fonts'
 
 // Maps
-@import 'helpers/maps/*'
+@import 'helpers/maps/map-breakpoints'
+@import 'helpers/maps/map-grid-system'
+@import 'helpers/maps/map-z-indexes'
 
 // Mixins
-@import 'helpers/mixins/**/*'
+@import 'helpers/mixins/BEM/mixin-BEM'
+@import 'helpers/mixins/BEM/mixin-BEM-shorthand'
 
-// Functions
-@import 'helpers/functions/*'
+@import 'helpers/mixins/mixin-bg'
+@import 'helpers/mixins/mixin-font-size'
+@import 'helpers/mixins/mixin-margin'
+@import 'helpers/mixins/mixin-media'
+@import 'helpers/mixins/mixin-padding'
+@import 'helpers/mixins/mixin-placeholder'
+@import 'helpers/mixins/mixin-position'
+@import 'helpers/mixins/mixin-pseudo'
+@import 'helpers/mixins/mixin-size'
+@import 'helpers/mixins/mixin-text-offset'
+@import 'helpers/mixins/mixin-transition'
+@import 'helpers/mixins/mixin-vertical-image'
+@import 'helpers/mixins/mixin-weight'
+
+// // Functions
+@import 'helpers/functions/get-comp'
+@import 'helpers/functions/z-index'
 
 // Reset
 @import 'base/reset'
@@ -16,28 +36,29 @@
 // Base styles
 @import 'base/base'
 
-// Connect fonts
-@import 'base/fonts'
-
 // Grid
-@import 'grid/*'
+@import 'grid/grid-columns'
+@import 'grid/grid-container'
+@import 'grid/grid-row'
+@import 'grid/grid-section'
+//@import 'grid/grid-visibility'
 
 @import 'utilities/colors'
 @import 'utilities/offsets'
 @import 'utilities/text'
 
-// Components
-// Button
+// // Components
+// // Button
 @import 'components/button/button-helpers'
 @import 'components/button/button'
 @import 'components/button/button-effects'
 
-// Form
+// // Form
 @import 'components/form/form-helpers'
 @import 'components/form/form'
 @import 'components/form/form-controls'
 
-// List
+// // List
 @import 'components/list/list'
 @import 'components/list/list-variants'
 
@@ -57,12 +78,12 @@
 
 @import 'components/social'
 
-// hamburger
+// // hamburger
 @import 'components/hamburger/nav-hamburger'
 @import 'components/hamburger/nav-hamburger-effect-1'
 @import 'components/hamburger/nav-hamburger-effect-2'
 
-// Navigation
+// // Navigation
 @import 'layouts/nav/nav-fixed'
 @import 'layouts/nav/nav'
 @import 'layouts/nav/nav-menu'
@@ -71,18 +92,24 @@
 @import 'layouts/nav/nav-logo'
 @import 'layouts/nav/nav-addition'
 
-// Header
+// // Header
 @import 'layouts/header/header'
 
 // Footer
 @import 'layouts/footer/footer'
 
-// Section
-@import 'sections/**/*'
+// // Section
+@import 'sections/front/about'
+@import 'sections/front/effects'
+@import 'sections/front/health'
+@import 'sections/front/pride'
+@import 'sections/front/secret'
+@import 'sections/front/specific'
+@import 'sections/front/target'
 
-//@import 'vendor/fontawesome/font-awesome'
-//@import 'vendor/tabs/tabs'
-@import 'vendor/modal/*'
-//@import 'vendor/carousel/carousel'
-//@import 'vendor/collapse/collapse'
-//@import 'vendor/animations/animations'
+// //@import 'vendor/fontawesome/font-awesome'
+// //@import 'vendor/tabs/tabs'
+// //@import 'vendor/modal/*'
+// //@import 'vendor/carousel/carousel'
+// //@import 'vendor/collapse/collapse'
+// //@import 'vendor/animations/animations'

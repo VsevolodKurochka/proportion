@@ -1,20 +1,20 @@
-+b('about')
+.about
 
 	+padding-y(45px)
 
-	+e('title')
+	&__title
 		color: $color-brand-2
 		margin-bottom: 30px
 
-	+e('subtitle')
+	&__subtitle
 		color: $color-brand-1
 		margin-bottom: 30px
 		font-family: $bold
 
-	+e('content')
+	&__content
 
 		li
-			+relative
+			position: relative
 			list-style: none
 			padding-left: 40px
 
@@ -25,8 +25,8 @@
 				content: ''
 				+absolute(0, null, null, 0)
 				+size(26px, 23px)
-				+bg('../img/icon-check-simple.svg')
+				+bg('../../themes/proportion/static/build/img/icon-check-simple.svg')
 
-	+e('row')
-		+min(sm)
+	&__row
+		+min($sm)
 			align-items: center

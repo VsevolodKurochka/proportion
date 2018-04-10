@@ -1,43 +1,60 @@
-/// Define sizes for title-xs
-$title-xs: ("title-xs": ('default': 18px, 'xs': 20px))
+.title
+	&-xs
+		font-size: 18px
+		
+		margin-top: 10px
+		margin-bottom: 15px
+		line-height: 1.2
+		font-weight: normal
 
-/// Define sizes for title-sm
-$title-sm: ("title-sm": ('default': 21px, 'sm': 30px, 'md': 32px, 'lg': 36px))
+		+min($xs)
+			font-size: 20px
 
-/// Define sizes for title-md
-$title-md: ("title-md": ('default': 22px, 'sm': 25px, 'md': 30px, 'lg': 40px))
+	&-sm
+		font-size: 21px
 
-/// Define sizes for title-lg
-$title-lg: ("title-lg": ('default': 30px, 'sm': 35px, 'md': 40px, 'lg': 50px))
+		margin-top: 10px
+		margin-bottom: 15px
+		line-height: 1.2
+		font-weight: normal
 
-// Merge all defined maps
-$sizes: map-merge($title-xs, $title-sm)
-$sizes: map-merge($sizes, $title-md)
-$sizes: map-merge($sizes, $title-lg)
+		+min($sm)
+			font-size: 30px
 
-%title-default
-  margin-top: 10px
-  margin-bottom: 15px
-  line-height: 1.2
-  font-weight: normal
+		+min($md)
+			font-size: 32px
 
-+b('title')
-  &-xs
-    +fs("title-xs")
+		+min($lg)
+			font-size: 36px
 
-    @extend %title-default
+	&-md
+		font-size: 22px
+		margin-top: 10px
+		margin-bottom: 15px
+		line-height: 1.2
+		font-weight: normal
 
-  &-sm
-    +fs("title-sm")
+		+min($sm)
+			font-size: 25px
 
-    @extend %title-default
+		+min($md)
+			font-size: 35px
 
-  &-md
-    +fs("title-md")
+		+min($lg)
+			font-size: 40px
 
-    @extend %title-default
+	&-lg
+		font-size: 30px
+		margin-top: 10px
+		margin-bottom: 15px
+		line-height: 1.2
+		font-weight: normal
 
-  &-lg
-    +fs("title-lg")
+		+min($sm)
+			font-size: 35px
 
-    @extend %title-default
+		+min($md)
+			font-size: 40px
+
+		+min($lg)
+			font-size: 50px

@@ -1,14 +1,13 @@
-+b('nav')
-	+e('logo')
-		font-size: 0
+.nav__logo
+	font-size: 0
 
-		+ee('content')
-			display: inline-block
+	&-content
+		display: inline-block
 
+	img
+		height: 50px
+
+	+max($md_max)
 		img
-			height: 50px
-
-		+max(md)
-			img
-				vertical-align: middle
-				max-height: 28px
+			vertical-align: middle
+			max-height: 28px

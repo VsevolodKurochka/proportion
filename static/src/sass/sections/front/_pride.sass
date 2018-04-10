@@ -1,33 +1,30 @@
-+b('pride')
+.pride
 	+padding-y(45px)
 
-	+e('row')
-		+min(sm)
+	&__row
+		+min($sm)
 			align-items: center
 
-	+e('title')
-		strong
-			color: $color-brand-1
+	&__title strong
+		color: $color-brand-1
 
-	+e('content')
+	&__content
 
-		+min(md)
+		+min($md)
 			padding-left: 45px
 
-	+e('text')
+	&__text
 
 		font-size: 20px
 
-		+text(15px)
-
-		+min(sm)
+		+min($sm)
 			font-size: 24px
 
-		+min(md)
+		+min($md)
 			padding-right: 45px
 			font-size: 25px
 
-	+e('carousel')
+	&__carousel
 
 		.owl
 
@@ -66,7 +63,7 @@
 					margin-left: -6.5px
 					margin-top: -8px
 
-					+bg('../img/icon-play.svg')
+					+bg('../../themes/proportion/static/build/img/icon-play.svg')
 
 				&:hover
 					background-color: darken($color-brand-1, 5%)
@@ -76,10 +73,10 @@
 				&:before
 					transform: scaleX(-1)
 
-				+min(md)
+				+min($md)
 					left: -25px
 
 			&-next
 				right: 0
-				+min(md)
+				+min($md)
 					right: -25px

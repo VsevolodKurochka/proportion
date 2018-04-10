@@ -2,35 +2,55 @@ $header-title: ('default': 30px, 'xs': 45px, 'sm': 55px, 'md': 65px, 'lg': 75px)
 
 $header-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
 
-+b("header")
-	+relative
+.header
+	position: relative
 	
 	+m('greeting')
 		padding-bottom: 45px
 
-	+e('title')
+	&__title
 		line-height: 1.1
 		font-family: $bold
-		+fs-simple($header-title)
-	
-	+e('content')
-		+relative
+		font-size: 30px
 
-		+min(md)
+		+min($xs)
+			font-size: 45px
+
+		+min($sm)
+			font-size: 55px
+
+		+min($md)
+			font-size: 65px
+
+		+min($lg)
+			font-size: 75px
+	
+	&__content
+		position: relative
+
+		+min($md)
 			margin-top: 75px
 
-	+e('text')
+	&__text
 		line-height: 1.2
 		margin-top: 30px
-		+fs-simple($header-text)
+		font-size: 20px
 
-	+e('row')
-		+m('reverse')
-			+min(md)
-				flex-direction: row-reverse
+		+min($xs)
+			font-size: 22px
 
-	+e('place')
-		+relative
+		+min($sm)
+			font-size: 24px
+
+		+min($md)
+			font-size: 28px
+
+	&__row_reverse
+		+min($md)
+			flex-direction: row-reverse
+
+	&__place
+		position: relative
 		padding-left: 45px
 		font-family: $bold
 		color: $color-brand-2
@@ -41,15 +61,12 @@ $header-text: ('default': 20px, 'xs': 22px, 'sm': 24px, 'md': 28px)
 			content: ''
 			+absolute(-1px, null, null, 0)
 			+size(22px, 26px)
-			+bg('../img/icon-map-marker.svg')
+			+bg('../../themes/proportion/static/build/img/icon-map-marker.svg')
 
-		+min(sm)
+		+min($sm)
 			+absolute(25px, 110px)
 
-	+e('banner')
-
-		+ee('row')
-
-			+min(sm)
-				margin-top: -215px
-				justify-content: center
+	&__banner-row
+		+min($sm)
+			margin-top: -215px
+			justify-content: center

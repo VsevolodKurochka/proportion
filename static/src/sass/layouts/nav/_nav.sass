@@ -1,9 +1,9 @@
-+b('nav')
-	+e('row')
+.nav
+	&__row
 		justify-content: space-between
 		align-items: center
 
-	+max(md)
+	+max($md_max)
 		display: flex
 		align-items: center
 		width: 100%
@@ -11,15 +11,12 @@
 		padding: 11px 0
 		background-color: $color-responsive-menu
 		box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
-		z-index: z("fixed")
+		z-index: 10
 
-		+ .site
-			margin-top: 56px
-
-		+e('container')
+		&__container
 			flex-basis: 100%
 
-	+min(md)
+	+min($md)
 		+padding-y(15px)
 		background-color: transparentize($color-white, 0.2)
 		box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)			

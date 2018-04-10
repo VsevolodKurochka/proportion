@@ -1,55 +1,55 @@
-+b('icon')
+.icon
 
 	&-column
 		margin-bottom: 30px
 
-	+m('shadow')
+	&_shadow
 		padding: 30px 15px
 		box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
 
-		+min(sm)
+		+min($sm)
 			height: 100%
 	
 	&_center &
 		
-		+e('header')
+		&__header
 			text-align: center
 			margin-bottom: 15px
 		
-		+e('title')
+		&__title
 			margin-bottom: 15px
 			text-align: center
 
-		+e('image')
+		&__image
 			height: 100px
 
-			+min(md)
+			+min($md)
 				height: 150px
 
-		+e('content')
+		&__content
 			font-size: 17px
 
-		+e('title')
+		&__title
 
 			font-size: 20px
 			font-family: $bold
 
-			+min(sm)
+			+min($sm)
 				font-size: 22px
 
-			+min(md)
+			+min($md)
 				font-size: 24px
 	
 	&_step
-		+relative
+		position: relative
 
-		+min(sm)
+		+min($sm)
 
 			&:before
 				content: ''
 				+absolute(60px, 0)
 				+size(66px, 32px)
-				+bg('../img/icon-arrow-right.svg')
+				+bg('../../themes/proportion/static/build/img/icon-arrow-right.svg')
 				opacity: 0.05
 
 
@@ -61,7 +61,7 @@
 	&_step &
 
 		+e('header')
-			+relative
+			position: relative
 			margin-bottom: 30px
 			text-align: center
 

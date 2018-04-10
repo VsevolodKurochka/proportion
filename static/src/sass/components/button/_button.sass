@@ -1,5 +1,5 @@
 %btn-placeholder
-	+relative
+	position: relative
 	display: inline-block
 	
 	max-width: 100%
@@ -23,7 +23,7 @@
 	+transition
 
 
-+b("btn")
+.btn
 	@extend %btn-placeholder
 
 	&_lg
@@ -39,23 +39,36 @@
 	&_nav
 		background-color: $color-responsive-menu-light
 
-		+max(md)
+		+max($md)
 			padding: 15px
 			width: 100%
 			font-size: 18px
 			text-align: left
 
-
-		+min(md)
-			background-color: $color-brand-1
+		// +min($md)
+		// 	background-color: $color-brand-1
 
 	//-
 	//- Iteration button fluid color
 	//-
 
-	+btn-static-iteration
+	//+btn-static-iteration
 
 	//-
 	//- Iteration button border-color
 	//-
-	+btn-border-iteration
+	//+btn-border-iteration
+
+	&_border-brand-1
+		border-width: $btn-border-width
+		border-style: $btn-border-style
+
+		background-color: transparent
+
+		+btn-border($color-brand-1, $color-brand-1)
+
+		&:before
+			background-color: $color-brand-1
+
+		&:hover
+			color: $color-white

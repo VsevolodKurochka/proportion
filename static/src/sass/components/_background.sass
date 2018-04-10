@@ -1,5 +1,5 @@
 +b('background')
-	+relative
+	position: relative
 	+padding-y(30px)
 	z-index: 1
 	color: #fff
@@ -11,38 +11,37 @@
 		background-color: transparentize($color-black, 0.2)
 		z-index: -1
 
-	+min(sm)
+	+min($sm)
 		+padding-y(60px)
 
 
-	+m('padding-x')
+	&_padding-x
 
-		+min(md)
+		+min($md)
 			+padding-x(60px)
 
-	+m('large')
+	&_large
 		+padding-y(45px)
 
-		+min(sm)
+		+min($sm)
 			+padding-y(90px)
 
-		+min(md)
+		+min($md)
 			+padding-y(120px)
 	
-	+e('title')
+	&__title
 		text-align: center
 		margin-bottom: 45px
 
-		+min(md)
+		+min($md)
 			margin-bottom: 60px
 
-	+e('banner')
+	&__banner
 
-		+ee('row')
-
-			+min(lg)
+		&-row
+			+min($lg)
 				justify-content: center
 
-	+min(lg)
+	+min($lg)
 		@media only screen
 			background-attachment: fixed

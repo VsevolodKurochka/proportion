@@ -1,25 +1,25 @@
-+b('target')
-	+relative
+.target
+	position: relative
 	+padding-y(45px)
 	z-index: 1
 
-	+min(sm)
+	+min($sm)
 		+padding-y(60px)
 
-	+e('bg')
+	&__bg
 		+absolute(50%, null, null, 50%)
 		transform: translate(-50%, -50%)
 		opacity: 0.2
 		z-index: -1
 
-	+e('title')
+	&__title
 		margin-bottom: 45px
 
-	+e('item')
+	&__item
 
 		margin-bottom: 30px
 
-		+ee('inner')
+		&-inner
 			padding: 30px 15px
 			display: inline-block
 			border-radius: 4px
@@ -28,13 +28,13 @@
 			text-align: left
 			line-height: 1.1
 
-			+min(md)
+			+min($md)
 				padding: 45px 25px
 				width: 450px
 				font-size: 20px
 
-		+ee('content')
-			+relative
+		&-content
+			position: relative
 			display: inline-block
 			padding-left: 60px
 
@@ -43,16 +43,16 @@
 				+absolute(50%, null, null, 0)
 				+size(44px)
 				margin-top: -22px
-				+bg('../img/icon-check.svg')
+				+bg('../../themes/proportion/static/build/img/icon-check.svg')
 	
 		&:nth-child(even)
 			text-align: right
 			
 		&:nth-child(even) &
-			+ee('inner')
+			&-inner
 				text-align: right
 
-			+ee('content')
+			&-content
 				padding-left: 0
 				padding-right: 60px
 

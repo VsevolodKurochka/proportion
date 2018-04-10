@@ -1,24 +1,22 @@
-+b('nav')
-	+e("menu")
-		$self: &
-		-webkit-overflow-scrolling: touch
-		+max(md)
-			
-			+fixed(56px, null, null, 0)
-			+size(270px, 100%)
-			padding: 0 0 100px 0
-			z-index: z("default")
-			overflow-y: auto
+.nav__menu
 
-			+transition
+	-webkit-overflow-scrolling: touch
+	+max($md_max)
+		+fixed(56px, null, null, 0)
+		+size(270px, 100%)
+		padding: 0 0 100px 0
+		z-index: 10
+		overflow-y: auto
 
-			background-color: $color-responsive-menu
-			transform: translateZ(0) translateY(-120%)
-			
-			z-index: -1
+		+transition
 
-			+m('active')
-				transform: none
+		background-color: $color-responsive-menu
+		transform: translateZ(0) translateY(-120%)
+		
+		z-index: -1
 
-		+min(md)
-			text-align: right
+		&_active
+			transform: none
+
+	+min($md)
+		text-align: right
