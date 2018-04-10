@@ -50,6 +50,7 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+		add_action( 'init', array( $this, 'register_post_types' ) );
 
 		add_filter('upload_mimes', array($this, 'cc_mime_types'));
 
@@ -62,6 +63,32 @@ class StarterSite extends TimberSite {
 
 	function register_post_types() {
 		//this is where you can register custom post types
+
+		register_post_type('rations', array(
+			'label'  => null,
+			'labels' => array(
+				'name'               => 'Рационы', // основное название для типа записи
+				'singular_name'      => 'ration', // название для одной записи этого типа
+				'add_new'            => 'Добавить рацион', // для добавления новой записи
+				'add_new_item'       => 'Добавление рациона', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Редактирование рациона', // для редактирования типа записи
+				'new_item'           => 'Новый рацион', // текст новой записи
+				'view_item'          => 'Смотреть рацион', // для просмотра записи этого типа.
+				'search_items'       => 'Искать рацион', // для поиска по этим типам записи
+				'not_found'          => 'Не найдено рациона', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+				'parent_item_colon'  => '', // для родителей (у древовидных типов)
+				'menu_name'          => 'Рационы', // название меню
+			),
+			'description'         => '',
+			'public'              => true,
+			'hierarchical'        => false,
+			'supports'            => array('title','editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'taxonomies'          => array(),
+			'has_archive'         => false,
+			'rewrite'             => true,
+			'query_var'           => true
+		) );
 	}
 
 	function register_scripts() {
