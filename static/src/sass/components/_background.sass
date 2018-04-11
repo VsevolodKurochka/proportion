@@ -3,6 +3,7 @@
 	+padding-y(30px)
 	z-index: 1
 	color: #fff
+	background-size: cover
 
 	&:before
 		content: ''
@@ -24,10 +25,16 @@
 		+padding-y(45px)
 
 		+min($sm)
-			+padding-y(90px)
+			+padding-y(75px)
 
 		+min($md)
-			+padding-y(120px)
+			+padding-y(100px)
+
+	&_page-simple
+
+		+min($md)
+			padding-top: 150px
+			padding-bottom: 80px
 	
 	&__title
 		text-align: center
@@ -36,11 +43,40 @@
 		+min($md)
 			margin-bottom: 60px
 
+	&__subtitle
+		margin-bottom: 30px
+		+min($md)
+			margin-bottom: 45px
+
+		+min($lg)
+			font-size: 30px
+
+	&__icons
+		margin-top: 30px
+		margin-bottom: 30px
+
+		+min($lg)
+			margin-top: 45px
+			margin-bottom: 45px
+
 	&__banner
 
 		&-row
+
+			&_margin
+				margin-top: 45px
+
+				+min($md)
+					margin-top: 75px
+
 			+min($lg)
 				justify-content: center
+
+	&__footer
+		text-align: center
+
+		&-title
+			margin-bottom: 10px
 
 	+min($lg)
 		@media only screen

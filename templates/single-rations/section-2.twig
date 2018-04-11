@@ -1,0 +1,25 @@
+<section class="ration-menu">
+	<div class="container ration-menu__container">
+		<p class="title-lg title-section text-center color-brand-2"><span class="bold">Пример</span> дневного меню</p>
+		<div class="row ration-menu__row">
+			{% for ration in post.get_field('ration_example') %}
+				<div class="ration ration_shadow col-12 col-sm-6">
+					<div class="ration__inner">
+						<div class="ration__header">
+							<img src={{ration.image}} class="ration__image">
+						</div>
+						<div class="ration__body">
+							<p class="ration__title">{{ration.title}}</p>
+							<div class="ration__content">
+								<p>{{ration.text}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="ration-menu__footer">
+			<p>Меню каждого рациона разработано на <span class="bold">14 дней</span> и на <span class="bold">90% блюда не повторятся</span></p>
+		</div>
+	</div>
+</section>

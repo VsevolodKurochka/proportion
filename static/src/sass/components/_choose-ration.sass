@@ -1,0 +1,43 @@
+.choose-ration
+
+	margin-bottom: 30px
+
+	&__inner
+		position: relative
+		border-radius: 4px
+		background-color: $color-white
+		box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
+		z-index: 1
+
+		+min($sm)
+			height: 360px
+	
+	&__image
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+		height: 100%
+
+	&__content
+		text-align: center
+
+		+min($sm)
+			max-width: 80%
+			margin-left: 20%
+			padding-top: 80px
+	
+	&__title
+		line-height: 1.1
+		font-family: $bold
+		margin-bottom: 30px
+		color: $color-brand-2
+		
+		+min($sm)
+			font-size: 25px
+
+		+min($md)
+			font-size: 30px
+
+		+min($lg)
+			font-size: 36px

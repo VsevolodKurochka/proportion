@@ -1,0 +1,16 @@
+<section class="section">
+	<div class="container">
+		<h3 class="title-lg color-brand-2 title-section">{{post.get_field('section_4_title')}}</h3>
+		<div class="row">
+			{% for secret in post.get_field('section_4_icons') %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_center">
+						<div class="icon__header"><img class="icon__image" src={{secret.image}} alt=""></div>
+						<p class="icon__title color-brand-2">{{secret.title}}</p>
+						<div class="icon__content">{{secret.text}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

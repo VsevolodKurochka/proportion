@@ -72,7 +72,7 @@ class StarterSite extends TimberSite {
 			'label'  => null,
 			'labels' => array(
 				'name'               => 'Рационы', // основное название для типа записи
-				'singular_name'      => 'ration', // название для одной записи этого типа
+				'singular_name'      => 'Рацион', // название для одной записи этого типа
 				'add_new'            => 'Добавить рацион', // для добавления новой записи
 				'add_new_item'       => 'Добавление рациона', // заголовка у вновь создаваемой записи в админ-панели.
 				'edit_item'          => 'Редактирование рациона', // для редактирования типа записи
@@ -87,7 +87,7 @@ class StarterSite extends TimberSite {
 			'description'         => '',
 			'public'              => true,
 			'hierarchical'        => false,
-			'supports'            => array('title','editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'supports'            => array('title'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 			'taxonomies'          => array(),
 			'has_archive'         => false,
 			'rewrite'             => true,

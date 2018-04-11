@@ -9,7 +9,7 @@
 	+btn-size($btn-default-padding, $btn-default-size)
 
 	border: none
-	border-radius: 23px
+	border-radius: 50px
 	
 	font-weight: bold
 	font-family: $bold
@@ -58,6 +58,13 @@
 	//- Iteration button border-color
 	//-
 	//+btn-border-iteration
+
+	&_brand-1
+		background-color: $color-brand-1
+		color: $color-white
+
+		&:before
+			background-color: darken($color-brand-1, 15%)
 
 	&_border-brand-1
 		border-width: $btn-border-width

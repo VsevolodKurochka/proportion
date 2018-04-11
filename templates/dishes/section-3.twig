@@ -1,0 +1,21 @@
+<section class="background background_large" style="background-image: url( {{ post.get_field('section_3_background') }} );">
+	<div class="container">
+		<h3 class="title-lg background__title">{{post.get_field('section_3_title')}}</h3>
+		<div class="title-xs background__subtitle">{{post.get_field('section_3_subtitle')}}</div>
+		<div class="row background__icons">
+			{% for icon in post.get_field('section_3_icons') %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_center">
+						<div class="icon__header"><img class="icon__image" src={{icon.image}} alt=""></div>
+						<div class="icon__title">{{icon.title}}</div>
+						<div class="icon__content">{{icon.text}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="background__footer">
+			<p class="background__footer-title">{{post.get_field('section_3_warning')}}</p>
+			<a href="#" class="btn btn_brand-1 btn_lg anchor">{{post.get_field('section_3_button_text')}}</a>
+		</div>
+	</div>
+</section>

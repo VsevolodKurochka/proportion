@@ -1,0 +1,16 @@
+<section class="ration-features">
+	<div class="container">
+		<div class="title-lg title-section text-center color-brand-2">{{options.single_ration_section_rations.title}}</div>
+		<div class="row ration-menu__row">
+			{% for icon in options.single_ration_section_rations.icons %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_center">
+						<div class="icon__header"><img class="icon__image" src={{icon.image}} alt=""></div>
+						<div class="icon__title color-brand-2">{{icon.title}}</div>
+						<div class="icon__content">{{icon.text}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

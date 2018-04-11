@@ -1,0 +1,23 @@
+<section class="section business-delivery">
+	<div class="container">
+		<div class="title-section text-center">
+			<h3 class="title-lg color-brand-2">{{post.get_field('section_2_title')}}</h3>
+			<div class="title-sm">
+				{{post.get_field('section_2_subtitle')}}
+			</div>
+		</div>
+		<div class="row mb-3">
+			{% for icon in post.get_field('section_2_icons') %}
+				<div class="icon-column col-12 col-sm-4">
+					<div class="icon icon_center">
+						<div class="icon__header"><img class="icon__image" src={{icon.image}} alt=""></div>
+						<div class="icon__content">{{icon.text}}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="business-delivery__footer title-sm text-center">
+			{{post.get_field('section_2_text')}}
+		</div>
+	</div>
+</section>

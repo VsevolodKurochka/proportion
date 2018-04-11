@@ -1,0 +1,59 @@
+.variant
+	color: $color-black
+	margin-bottom: 30px
+
+	&__content
+		background-color: $color-white
+		border-radius: 4px
+		padding: 30px
+		margin-bottom: 15px
+
+	&__header
+
+		font-size: 20px
+		line-height: 1.1
+		font-family: $bold
+		text-align: center
+		color: $color-brand-2
+		margin-bottom: 30px
+
+		+min($md)
+			font-size: 24px
+
+	&__body
+		text-align: center
+
+		+min($md)
+			+padding-x(35px)
+
+		ul
+			list-style: none
+
+		li
+			padding-bottom: 15px
+			border-bottom: 2px solid #eff2fa
+			&:not(:last-child)
+				margin-bottom: 15px
+	
+	&__footer
+		background-color: $color-white
+		border-radius: 4px
+		padding: 15px
+
+	&__prices
+		li
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+
+		&-price
+			color: $color-brand-1
+			font-family: $bold
+			font-size: 21px
+
+			sup
+				font-size: 75%

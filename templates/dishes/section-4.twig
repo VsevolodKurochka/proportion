@@ -1,0 +1,23 @@
+<section class="dishes-prices">
+	<div class="container">
+		<h3 class="title-lg title-section color-brand-2">{{post.get_field('section_4_title')}}</h3>
+		<div class="row">
+			{% for dish in post.get_field('section_4_dishes') %}
+				<div class="dish col-12 col-sm-6">
+					<div class="dish__inner">
+						<div class="dish__header">
+							<img src={{dish.image}} class="dish__header-image">
+							<div class="dish__info">
+								<p class="dish__info-price">{{dish.price}}<sup>грн/кг</sup></p>
+								<p class="dish__info-size">Всего: {{dish.size}}<sup>г</sup></p>
+							</div>
+						</div>
+						<div class="dish__body">
+							<p class="dish__name">{{dish.title}}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

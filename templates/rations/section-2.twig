@@ -1,0 +1,17 @@
+<section class="section">
+	<div class="container">
+		<div class="row">
+			{% for ration in rations %}
+				<div class="choose-ration col-12 col-sm-6">
+					<div class="choose-ration__inner">
+						<img src={{ration.get_field('image_ration')}} alt="" class="choose-ration__image">
+						<div class="choose-ration__content">
+							<p class="choose-ration__title">{{ration.title}}</p>
+							<a class="btn btn_brand-1 btn_lg btn_shadow-brand-1 effect effect_bounce-top" href={{ration.link}} target="_blank">Выбрать и заказать свой рацион</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

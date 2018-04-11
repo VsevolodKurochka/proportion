@@ -1,0 +1,10 @@
+<section class="background background_large" style="background-image: url( {{ post.get_field('section_3_image') }} );">
+	<div class="container">
+		<h3 class="title-lg background__title">{{post.get_field('section_3_title')}}</h3>
+		<div class="row background__banner-row">
+			<div class="col-12 col-lg-10">
+				{{ function('banner_form', post.get_field('section_3_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Выбрать и заказать свой рацион"]', 'banner-form_transparent' )}}
+			</div>
+		</div>
+	</div>
+</section>
