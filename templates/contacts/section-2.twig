@@ -1,0 +1,34 @@
+<section class="section contacts">
+	<div class="container">
+		<div class="row contacts__row">
+			<div class="col-12 col-sm-6 contacts__info">
+				<p class="contacts__place">{{options.address}}</p>
+				<ul class="contacts__phones">
+					{% for phone in options.telephones %}
+						<li>
+							<a class="contacts__link" href="tel: {{phone.phone}}">{{phone.phone}}</a>
+						</li>
+					{% endfor %}
+				</ul>
+				<p><a class="contacts__link" href="mailto: {{options.email}}">{{options.email}}</a></p>
+				<ul class="social contacts__social">
+					{% for social in options.social %}
+						<li class="social__item">
+							<a href={{social.link}} class="social__link">
+								<img class="social__image" src={{social.icon}} alt="Social link">
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="col-12 col-sm-6">
+				<div class="contacts__form">
+					{{function('do_shortcode', '[contact-form-7 id="404" title="Контактная форма - Контакты"]')}}
+				</div>
+			</div>
+		</div>
+		<div class="row contact__map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5079.966027097161!2d30.522961000000002!3d50.460041000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce46bd5b7813%3A0x5e921fb01c2e7549!2z0LLRg9C70LjRhtGPINCf0LXRgtGA0LAg0KHQsNCz0LDQudC00LDRh9C90L7Qs9C-LCAyMy84LCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1523456411358" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</div>
+</section>

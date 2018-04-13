@@ -2,9 +2,7 @@
 	position: relative
 	
 	&_greeting
-		+margin-y(45px)
-		padding-top: 45px
-		padding-bottom: 45px
+		+margin-y(90px, 45px)
 
 	&_simple
 		+margin-y(45px)
@@ -12,15 +10,16 @@
 			margin-top: 100px
 
 	&_background
-		+padding-y(75px)
+		+padding-y(100px, 40px)
+		+min($sm)
+			+padding-y(140px, 80px)
 		+min($lg)
-			+padding-y(125px)
+			+padding-y(170px, 100px)
 
 	&__title
 		line-height: 1.1
 		font-family: $bold
-		font-size: 30px
-		margin-bottom: 30px
+		font-size: 40px
 
 		+min($xs)
 			font-size: 45px
@@ -29,7 +28,7 @@
 			font-size: 55px
 
 		+min($md)
-			font-size: 65px
+			font-size: 63px
 
 		+min($lg)
 			font-size: 75px
@@ -38,7 +37,7 @@
 		font-weight: normal
 		line-height: 1.1
 		font-size: 20px
-		margin-bottom: 30px
+		+margin-y(30px)
 
 		+min($md)
 			font-size: 25px
@@ -77,17 +76,27 @@
 		color: $color-brand-2
 		font-size: 30px
 		line-height: 1
+		margin-top: 30px
 
 		&:before
 			content: ''
 			+absolute(-1px, null, null, 0)
 			+size(22px, 26px)
 			+bg('../../themes/proportion/static/build/img/icon-map-marker.svg')
+		
+		+min($md)
+			position: absolute
+			top: -3px
+			right: 100px
 
-		+min($sm)
-			+absolute(25px, 110px)
+		+min($lg)
+			top: 25px
+			right: 110px
 
 	&__banner-row
 		+min($sm)
-			margin-top: -215px
+			margin-top: -100px
 			justify-content: center
+
+		+min($lg)
+			margin-top: -215px

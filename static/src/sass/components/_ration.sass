@@ -6,6 +6,9 @@
 		position: relative
 		+size(160px)
 
+		+max($sm_max)
+			margin: 0 auto -15px
+
 	&__image
 		+absolute(0, null, null, 0)
 		+size(100%)
@@ -35,7 +38,7 @@
 	&_light &
 
 		&__title
-			color: $color-black
+			color: $color-white
 		
 		&__body
 			color: $color-white

@@ -36,24 +36,37 @@
 			margin-right: 5px
 			border-radius: 100%
 			background-color: $color-brand-1
+			+transition
 
 			&:last-child
 				margin-right: 0
 
 	&-phones
 		position: relative
-		display: inline-block
-		vertical-align: middle
+		margin-bottom: 15px
+		padding-left: 30px
+
+		&:before
+			content: ''
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%)
+			+size(18px, 32px)
+			+bg('../../themes/proportion/static/build/img/icon.svg')
 		
 		+min($md)
+			display: inline-block
+			vertical-align: middle
+			padding-left: 0
 			padding-right: 30px
 			margin-right: 25px
+			margin-bottom: 0
+
 			&:before
-				content: ''
-				+absolute(50%, 0)
-				transform: translateY(-50%)
-				+size(18px, 32px)
-				+bg('../../themes/proportion/static/build/img/icon.svg')
+				left: auto
+				right: 0
+			
 
 	&-btn
 		display: inline-block
@@ -68,7 +81,7 @@
 
 			+absolute(-15px, 0)
 			+size(56px)
-			background-color: darken($color-responsive-menu, 15%)
+			background-color: $color-brand-1
 			opacity: 0
 
 			+transition
@@ -83,14 +96,17 @@
 			padding: 15px
 			background-color: $color-responsive-menu
 			transform: translateZ(0) translateX(120%)
-
+			text-align: left
 			+transition
 
-		&.active &-links
-			transform: none
+		&.active &
+			&-links
+				transform: none
+			&-toggle
+				span
+					background-color: $color-white
 
 		&-link
-			color: $color-white
 			font-size: 14px
 
 

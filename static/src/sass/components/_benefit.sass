@@ -1,4 +1,4 @@
-+b('benefits')
+.benefits
 
 	&__row
 		margin-bottom: 45px
@@ -9,6 +9,10 @@
 .benefit
 
 	text-align: center
+
+	+max($md_max)
+		&:not(:last-child)
+			margin-bottom: 30px
 
 	&__number
 		font-family: $bold

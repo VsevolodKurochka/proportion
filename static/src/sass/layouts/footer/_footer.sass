@@ -19,11 +19,32 @@
 
 	&__phone
 
+		display: block
+
 		+transition
 
 		&:hover
 			color: $color-brand-1
 
+		+min($sm)
+			display: inline-block
+
 	&__row
+
 		+min($sm)
 			align-items: center
+
+	&__column
+		+max($sm_max)
+			&:not(:last-child)
+				margin-bottom: 30px
+
+	&__menu
+		li
+			display: block
+			a
+				display: inline-block
+
+				+max($md_max)
+					padding: 5px 0
+		

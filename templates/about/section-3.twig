@@ -1,0 +1,19 @@
+<section class="section about-team">
+	<div class="container">
+		<p class="title-lg color-brand-2 bold text-center title-section">Наша команда</p>
+		<div class="row about-team__row">
+			{% for member in post.get_field('team') %}
+				<div class="team col-12 col-sm-6 col-md-4">
+					<div class="team__header">
+						<img src={{member.image}} class="team__image" alt="{{member.name}}">
+						<div class="team__header-info">
+							<p class="team__name">{{member.name}}</p>
+							<div class="team__description">{{member.short_info}}</div>
+						</div>
+					</div>
+					<div class="team__body">{{member.full_info}}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,19 @@
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-8">
+				<div class="questions-wrapper">
+					{% for question in post.get_field('questions') %}
+						<div class="question">
+							<div class="question__header">{{question.question}}</div>
+							<div class="question__body">{{question.answer}}</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-12 col-sm-4">
+				
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,6 +1,6 @@
 <div class="container footer__container">
 	<div class="row footer__row">
-		<div class="col-12 col-sm-4">
+		<div class="footer__column col-12 col-sm-4">
 			<img src={{options.footer_logo}} class="footer__logo" alt="Footer logo">
 			<ul class="social footer__social">
 				{% for social in options.social %}
@@ -12,7 +12,7 @@
 				{% endfor %}
 			</ul>
 		</div>
-		<div class="col-12 col-sm-4">
+		<div class="footer__column col-12 col-sm-4">
 			<div class="footer__phones">
 				{% for phone in options.telephones %}
 					<a class="footer__phone" href="tel: {{phone.phone}}">{{phone.phone}}</a>
@@ -20,6 +20,10 @@
 			</div>
 			<div class="footer__place">{{options.address}}</div>
 		</div>
-		<div class="col-12 col-sm-4"></div>
+		<div class="footer__column col-12 col-sm-4">
+			<div class="footer__menu">
+				{% include "menu.twig" with {'menu': menu_footer.get_items} %}
+			</div>
+		</div>
 	</div>
 </div>

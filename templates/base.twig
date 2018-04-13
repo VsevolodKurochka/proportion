@@ -15,14 +15,13 @@
               <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger"><span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
               </button>
               <div class="nav__logo-content">
-              	{{logo}}
+              	{{function('get_custom_logo')}}
               </div>
             </div>
-            <nav class="nav__menu col-12 col-md-5" id="js-navigation-menu"><ul>
+            <nav class="nav__menu col-12 col-md-5 col-lg-6" id="js-navigation-menu"><ul>
               {% include "menu.twig" with {'menu': menu.get_items} %}
-              
             </nav>
-            <div class="nav__addition col-4 col-md-5" id="js-nav-addition">
+            <div class="nav__addition col-4 col-md-5 col-lg-4" id="js-nav-addition">
               <div class="nav__addition-toggle" id="js-nav-toggle"><span></span><span></span><span></span>
               </div>
               <div class="nav__addition-links js-nav-links">
@@ -31,7 +30,7 @@
               			<a class="nav__addition-link" href="tel: {{phone.phone}}">{{phone.phone}}</a>
               		{% endfor %}
               	</div>
-              	<a href="#" class="btn btn_border-brand-1 effect effect_bounce-top nav__addition-btn">Проконсультироваться бесплатно</a>
+              	<a href="#" class="btn btn_border-brand-1 effect effect_bounce-top nav__addition-btn">Проконсультироваться</a>
               </div>
             </div>
           </div>

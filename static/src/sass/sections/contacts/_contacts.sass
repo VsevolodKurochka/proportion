@@ -1,0 +1,46 @@
+.contacts
+
+	&__place
+		font-family: $bold
+		font-size: 22px
+
+	&__info
+
+		> *:not(:last-child)
+
+			padding-bottom: 15px
+			margin-bottom: 15px
+			border-bottom: 1px solid #f5f5f5
+
+	&__phones
+		list-style: none
+
+		li
+			&:not(:last-child)
+				margin-bottom: 10px
+
+		a
+			color: $color-brand-2
+
+	&__link
+		text-decoration: none
+		color: inherit
+		font-family: $bold
+		+transition
+
+		&:hover
+			color: $color-brand-1
+
+	&__row
+
+		margin-bottom: 45px
+
+		+min($sm)
+			align-items: center
+
+	&__form
+		.wpcf7-form-control-wrap
+			margin-bottom: 15px
+
+	&__map
+		margin-top: 45px
