@@ -1,0 +1,13 @@
+<article class="article">
+	<div class="article__header">
+		<a href="{{article.link}}" class="article__title">{{article.title}}</a>
+		<p class="article__date">{{ article.post_date|date('F j, Y') }}</p>
+	</div>
+	<a href="{{article.link}}" class="article__image">
+		<img src="{{article.thumbnail.src|resize(845, 600)}}" alt="">
+	</a>
+	<div class="article__body">{{ article.preview.read_more('') }}</div>
+	<div class="article__footer">
+		<a href="{{article.link}}" class="btn btn_brand-1 btn_shadow-brand-1 btn_lg effect effect_bounce-top article__link">Читать далее</a>
+	</div>
+</article>

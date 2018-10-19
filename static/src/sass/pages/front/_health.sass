@@ -1,0 +1,21 @@
+.health
+
+	+padding-y(45px)
+
+	&__header
+		margin-bottom: 30px
+
+		+min($md)
+			margin-bottom: 45px
+
+		+min($lg)
+			margin-bottom: 75px
+
+	&__row
+
+		counter-reset: health
+
+	&__icon .icon__header
+		&:before
+			counter-increment: health
+			content: "#" counter(health) ":"

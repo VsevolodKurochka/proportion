@@ -1,0 +1,19 @@
+<div class="pagination">
+	{% if blog.pagination.prev %}
+		<a href="{{blog.pagination.prev.link}}" class="pagination__prev {{blog.pagination.prev.link|length ? '' : 'invisible'}}">Назад</a>
+	{% endif %}
+	<ul class="pagination__list">
+		{% for page in blog.pagination.pages %}
+			<li class="pagination__list-element">
+				{% if page.link %}
+					<a href="{{page.link}}" class="pagination__list-element-link {{page.class}}">{{page.title}}</a>
+				{% else %}
+					<span class="pagination__list-element-link {{page.class}}">{{page.title}}</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+	{% if blog.pagination.next %}
+		<a href="{{blog.pagination.next.link}}" class="pagination__next {{blog.pagination.next.link|length ? '' : 'invisible'}}">Вперед</a>
+	{% endif %}
+</div>

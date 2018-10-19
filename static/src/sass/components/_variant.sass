@@ -5,8 +5,12 @@
 	&__content
 		background-color: $color-white
 		border-radius: 4px
-		padding: 30px
+		padding: 15px
 		margin-bottom: 15px
+
+		+min($sm)
+			padding: 30px
+			height: unquote("calc(100% - 150px)")
 
 	&__header
 
@@ -22,9 +26,10 @@
 
 	&__body
 		text-align: center
+		font-size: 14px
 
 		+min($md)
-			+padding-x(35px)
+			font-size: 17px
 
 		ul
 			list-style: none
@@ -49,11 +54,16 @@
 			display: flex
 			flex-flow: row wrap
 			justify-content: space-between
+			align-items: center
+
+		&-time
+			+max($sm)
+				font-size: 13px
 
 		&-price
 			color: $color-brand-1
 			font-family: $bold
-			font-size: 21px
+			font-size: 18px
 
 			sup
 				font-size: 75%

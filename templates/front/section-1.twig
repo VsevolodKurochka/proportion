@@ -1,23 +1,33 @@
 <header class="header header_greeting">
-	<div class="container">
-		<div class="row header__row header__row_reverse">
-			<div class="col-12 col-md-7">
-				<div class="header__content">
-					<h1 class="header__title color-brand-2">{{post.get_field('section_1_title')}}</h1>
-					<p class="header__place">{{post.get_field('section_1_address')}}</p>
-					<div class="header__text">{{post.get_field('section_1_text')}}</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-5">
-				<div class="header__image">
-					<img src="{{TimberImage(post.get_field('section_1_image')).src}}" alt="">
-				</div>
-			</div>
-		</div>
-		<div class="row header__banner-row">
-			<div class="col-12 col-sm-10">
-				{{ function('banner_form', post.get_field('section_1_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Проконсультироваться бесплатно"]')}}
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row header__row header__row_reverse">
+      <div class="col-12 col-md-7">
+        <div class="header__content">
+          <h1 class="header__title color-brand-2">{{post.get_field('section_1_title')}}</h1>
+          <p class="header__place">{{post.get_field('section_1_address')}}</p>
+          <div class="header__text">{{post.get_field('section_1_text')}}</div>
+          <button class="btn btn_lg btn_brand-1 effect effect_bounce-top" data-action="modal" data-open="#modal-header" data-video="https://www.youtube.com/embed/sxneTknadO8?rel=0&amp;showinfo=0">Смотреть видео</button>        </div>
+      </div>
+      <div class="col-12 col-md-5">
+        <div class="header__image">
+          <img src="{{TimberImage(post.get_field('section_1_image')).src}}" alt="{{post.get_field('section_1_title')|striptags}}">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row header__banner-row">
+      <div class="col-12 col-sm-10">
+        {#{ function('banner_form', post.get_field('section_1_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Заказать рацион"]')}#}
+      </div>
+    </div> -->
+  </div>
 </header>
+<div class="modal" id="modal-header">
+  <div class="modal__box modal__box_transparent modal__box_effect-1 modal__box_medium">
+    <div class="modal__header">
+      <button class="modal__close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal__body">
+      <div class="modal__video"></div>
+    </div>
+  </div>
+</div>

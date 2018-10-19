@@ -1,0 +1,32 @@
+.about
+
+	+padding-y(45px)
+
+	&__title
+		color: $color-brand-2
+		margin-bottom: 30px
+
+	&__subtitle
+		color: $color-brand-1
+		margin-bottom: 30px
+		font-family: $bold
+
+	&__content
+
+		li
+			position: relative
+			list-style: none
+			padding-left: 40px
+
+			&:not(:last-child)
+				margin-bottom: 15px
+
+			&:before
+				content: ''
+				+absolute(0, null, null, 0)
+				+size(26px, 23px)
+				+bg('../../themes/proportion/static/build/img/icon-check-simple.svg')
+
+	&__row
+		+min($sm)
+			align-items: center

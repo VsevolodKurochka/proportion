@@ -10,29 +10,53 @@
 /// @param {Length} $bottom [null] - Bottom offset
 /// @param {Length} $left [null] - Left offset
 =position($position, $top: null, $right: null, $bottom: null, $left: null)
-  position: $position
-  top: $top
-  right: $right
-  bottom: $bottom
-  left: $left
+	position: $position
+	top: $top
+	right: $right
+	bottom: $bottom
+	left: $left
 
 /// Shorthand for absolute positioning.
 /// @param {Arglist} $args - Offsets
 /// @example scss
 /// @include absolute($top: 0, $right: 0, $bottom: 0, $left: 0)
-=absolute($args...)
-  +position(absolute, $args...)
+=absolute($top: null, $right: null, $bottom: null, $left: null)
+	position: absolute
+
+	@if $top != null
+		top: $top
+
+	@if $right != null
+		right: $right
+
+	@if $bottom != null
+		bottom: $bottom
+
+	@if $left != null
+		left: $left
 
 /// Shorthand for relative positioning.
 /// @param {Arglist} $args - Offsets
 /// @example scss
 /// @include relative($top: 0, $right: 0, $bottom: 0, $left: 0)
-=relative($args...)
-  +position(relative, $args...)
+=relative($top: null, $right: null, $bottom: null, $left: null)
+	position: relative
+
+	@if $top != null
+		top: $top
+
+	@if $right != null
+		right: $right
+
+	@if $bottom != null
+		bottom: $bottom
+
+	@if $left != null
+		left: $left
 
 /// Shorthand for fixed positioning.
 /// @param {Arglist} $args - Offsets
 /// @example scss
 /// @include relative($top: 0, $right: 0, $bottom: 0, $left: 0)
 =fixed($args...)
-  +position(fixed, $args...)
+	+position(fixed, $args...)

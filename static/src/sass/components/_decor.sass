@@ -1,0 +1,25 @@
+@keyframes decor
+	0%, 100%
+		transform: none
+	50%
+		transform: translateY(30px)
+
+.decor
+
+	position: absolute
+	animation: decor 7s linear 0s infinite;
+
+	+max($sm_max)
+		max-width: 70px
+
+	&.top
+		top: -60px
+
+	&.bottom
+		bottom: -60px
+
+	&.left
+		left: 15%
+
+	&.right
+		right: 15%

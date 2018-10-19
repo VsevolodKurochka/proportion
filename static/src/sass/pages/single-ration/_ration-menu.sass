@@ -1,0 +1,32 @@
+.ration-menu
+	position: relative
+	z-index: 1
+	margin-bottom: 45px
+
+	&__container
+		padding-top: 45px
+		border-radius: 4px
+		background-color: $color-white
+
+		+min($sm)
+			margin-top: -100px
+
+	&__row
+
+		+max($sm)
+			.ration
+				text-align: center
+				&__header
+					margin-left: auto
+					margin-right: auto
+
+		+min($sm)
+			justify-content: center
+
+		+min($lg)
+			padding-left: 45px
+			padding-right: 45px
+
+	&__footer
+		text-align: center
+		margin-top: 30px

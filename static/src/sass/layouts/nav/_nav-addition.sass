@@ -1,5 +1,6 @@
 .nav__addition
 	position: relative
+	text-align: right
 
 	&-link
 		display: block
@@ -13,106 +14,61 @@
 		&:hover
 			color: $color-brand-1
 
+		+max($md_max)
+			font-size: 12px
+			
+			&:not(:last-child)
+				margin-bottom: 5px
+
 		+min($md)
+			font-size: 13px
+
+		+min($lg)
 			font-size: 16px
-
-
-	&-toggle
-		position: relative
-
-		display: block
-		-webkit-tap-highlight-color: transparent
-		outline: none
-		
-		cursor: pointer
-		z-index: 1
-
-		span
-			position: relative
-			display: inline-block
-			vertical-align: middle
-
-			+size(5px)
-			margin-right: 5px
-			border-radius: 100%
-			background-color: $color-brand-1
-			+transition
-
-			&:last-child
-				margin-right: 0
 
 	&-phones
 		position: relative
-		margin-bottom: 15px
-		padding-left: 30px
 
-		&:before
-			content: ''
-			position: absolute;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%)
-			+size(18px, 32px)
-			+bg('../../themes/proportion/static/build/img/icon.svg')
-		
 		+min($md)
 			display: inline-block
 			vertical-align: middle
-			padding-left: 0
-			padding-right: 30px
-			margin-right: 25px
-			margin-bottom: 0
+			padding-right: 25px
+			margin-right: 10px
 
 			&:before
+				content: ''
+				+absolute(50%, null, null, 0)
+				transform: translateY(-50%)
+				+size(15px, 26px)
+				+bg('../../themes/proportion/static/build/img/icon.svg')
+
 				left: auto
 				right: 0
+
+		+min($lg)
+			padding-right: 30px
+			margin-right: 25px
+			&:before
+				+size(18px, 32px)
 			
 
 	&-btn
 		display: inline-block
 		vertical-align: middle
 
-
 	+max($md_max)
-		text-align: right
-
-		&:before
-			content: ''
-
-			+absolute(-15px, 0)
-			+size(56px)
-			background-color: $color-brand-1
-			opacity: 0
-
-			+transition
-
-		&.active
-			&:before
-				opacity: 1
-
-		&-links
-			+absolute(40px, 0)
-			min-width: 180px
-			padding: 15px
-			background-color: $color-responsive-menu
-			transform: translateZ(0) translateX(120%)
-			text-align: left
-			+transition
-
-		&.active &
-			&-links
-				transform: none
-			&-toggle
-				span
-					background-color: $color-white
-
-		&-link
-			font-size: 14px
-
+		.nav__button
+			display: none
 
 	+min($md)
-		text-align: right
 
 		&-toggle,
 		&-link_hidden
 			display: none
+
+		.nav__button
+			vertical-align: middle
+
+			+max($lg_max)
+				font-size: 12px
+				padding: 10px

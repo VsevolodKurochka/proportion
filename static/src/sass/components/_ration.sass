@@ -1,13 +1,25 @@
+$ration-header-width: 150px
+$ration-header-height: $ration-header-width
+
+
 .ration
 
 	margin-bottom: 30px
 
 	&__header
-		position: relative
-		+size(160px)
+		+relative
+		+size($ration-header-width)
 
-		+max($sm_max)
-			margin: 0 auto -15px
+		// +max($sm_max)
+		// 	margin: 0 auto -15px
+
+	&__inner
+		+relative
+	
+	&__link
+		+absolute(0, null, null, 0)
+		+size(100%)
+		z-index: 3
 
 	&__image
 		+absolute(0, null, null, 0)
@@ -15,7 +27,8 @@
 		object-fit: cover
 	
 	&__body
-		padding: 30px
+		padding: 15px
+		+transition
 
 	&__title
 		font-family: $bold
@@ -27,7 +40,24 @@
 			font-size: 24px
 
 	&__content
-		padding-right: 30px
+		font-size: 15px
+
+		ul
+			list-style: none
+
+			li
+				+relative
+
+				padding-left: 25px
+
+				&:not(:last-child)
+					margin-bottom: 5px
+
+				&:before
+					content: ""
+					+absolute(8px, null, null, 0)
+					+size(15px, 2px)
+					background-color: #ddd
 
 	&_shadow &
 
@@ -44,10 +74,26 @@
 			color: $color-white
 			background-color: transparentize($color-white, 0.75)
 
+	&_static &
+
+		&__body
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			height: $ration-header-height
+			
+	&_static:hover &
+		&__body
+			background-color: transparentize($color-brand-2, 0.3)
+
 	+min($sm)
 
 		&__inner
 			display: flex
+			align-items: center
 
 		&__body
 			flex: 1

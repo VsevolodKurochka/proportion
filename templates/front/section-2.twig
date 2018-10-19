@@ -12,7 +12,7 @@
 			<div class="col-12 col-sm-6">
 				<div class="owl-carousel pride__carousel" id="pride-carousel">
 					{% for slide in post.get_field('section_2_slider') %}
-						<img src={{slide.url}} alt="">
+						<img src={{slide.url|resize(570,550)}} alt="Изображение карусели">
 					{% endfor %}
 				</div>
 			</div>

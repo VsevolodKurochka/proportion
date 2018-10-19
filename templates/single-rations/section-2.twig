@@ -1,12 +1,12 @@
 <section class="ration-menu">
 	<div class="container ration-menu__container">
 		<p class="title-lg title-section text-center color-brand-2"><span class="bold">Пример</span> дневного меню</p>
-		<div class="row ration-menu__row">
+		<div class="ration-menu__row owl-carousel" id="ration-menu-row">
 			{% for ration in post.get_field('ration_example') %}
-				<div class="ration ration_shadow col-12 col-sm-6">
+				<div class="ration ration_shadow">
 					<div class="ration__inner">
 						<div class="ration__header">
-							<img src={{ration.image}} class="ration__image">
+							<img src="{{ration.image|resize(250, 250)}}" class="ration__image">
 						</div>
 						<div class="ration__body">
 							<p class="ration__title">{{ration.title}}</p>

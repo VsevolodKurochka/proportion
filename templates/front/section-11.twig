@@ -1,0 +1,12 @@
+<section class="section">
+	<div class="container">
+		<p class="title-lg title-section color-brand-2 text-center">Вот что говорят <span class="bold">наши клиенты</span></p>
+		<div class="row">
+			{% for review in reviews %}
+				<div class="review-column col-12 col-sm-6">
+					{% include 'templates/partial/review.twig' %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

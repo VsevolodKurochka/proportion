@@ -1,0 +1,18 @@
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-8 col-md-9">
+				<div class="blog__articles">
+					{% for article in posts %}
+						{% include 'partial/article.twig' %}
+					{% endfor %}
+				</div>
+
+				{% include 'partial/pagination-blog.twig' %}
+			</div>
+			<div class="col-12 col-sm-4 col-md-3">
+				{% include 'sidebar.twig' %}
+			</div>
+		</div>
+	</div>
+</section>

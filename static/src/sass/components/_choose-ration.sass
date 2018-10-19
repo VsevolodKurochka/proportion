@@ -4,6 +4,7 @@
 
 	&__inner
 		position: relative
+		padding: 30px 15px
 		border-radius: 4px
 		background-color: $color-white
 		box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15)
@@ -17,7 +18,17 @@
 		top: 0
 		left: 0
 		z-index: -1
-		height: 100%
+		+size(80px, 100%)
+		object-fit: cover
+
+		+min($sm)
+			width: 220px
+
+	&__link
+
+		+max($sm_max)
+			font-size: 12px
+			padding: 10px 15px
 
 	&__content
 		text-align: center
@@ -30,10 +41,11 @@
 	&__title
 		line-height: 1.1
 		font-family: $bold
-		margin-bottom: 30px
+		margin-bottom: 15px
 		color: $color-brand-2
 		
 		+min($sm)
+			margin-bottom: 30px
 			font-size: 25px
 
 		+min($md)
@@ -41,3 +53,6 @@
 
 		+min($lg)
 			font-size: 36px
+			max-width: 300px
+			margin-left: auto
+			margin-right: auto

@@ -1,0 +1,56 @@
+.pagination
+	
+	+margin-y(30px)
+	text-align: center
+	list-style: none
+	font-family: $bold
+
+	+min($md)
+		+margin-y(45px)
+	a
+		text-decoration: none
+		+transition
+		
+	&__list,
+	&__prev,
+	&__next
+		display: inline-block
+		vertical-align: middle
+
+	&__next,
+	&__prev
+		color: $color-black
+		&:hover
+			color: $color-brand-1
+
+	&__prev
+		margin-right: 15px
+
+		&:hover
+			transform: translateX(-5px)
+
+	&__next
+		margin-left: 15px
+
+		&:hover
+			transform: translateX(5px)
+
+	&__list
+
+		&-element
+			display: inline-block
+			margin-right: 15px
+
+			&-link
+				display: inline-block
+				+size(50px)
+				text-align: center
+				line-height: 50px
+				border-radius: 100%
+				background-color: #f5f5f5
+				color: $color-black
+		
+				&.current,
+				&:hover
+					background-color: $color-brand-1
+					color: $color-white

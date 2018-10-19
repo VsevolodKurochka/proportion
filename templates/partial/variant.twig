@@ -1,0 +1,30 @@
+<div class="variant col-12 col-sm-4">
+	<div class="variant__content">
+		<div class="variant__header">
+			<p>{{variant.calories}} ккал</p>
+		</div>
+		<div class="variant__body">
+			{{variant.meals}}
+		</div>
+	</div>
+	<div class="variant__footer">
+		<ul class="variant__prices">
+			<li>
+				<span class="variant__prices-time">1 пробный день -15%</span>
+				<span class="variant__prices-price">{{variant.prices.day}} грн</span>
+			</li>
+			<li>
+				<span class="variant__prices-time">1 неделя -5%</span>
+				<span class="variant__prices-price">{{variant.prices.week}} грн</span>
+			</li>
+			<li>
+				<span class="variant__prices-time">2 недели -8%</span>
+				<span class="variant__prices-price">{{variant.prices.two_weeks}} грн</span>
+			</li>
+			<li>
+				<span class="variant__prices-time">1 месяц -10%</span>
+				<span class="variant__prices-price">{{variant.prices.one_month}} грн</span>
+			</li>
+		</ul>
+	</div>
+</div>

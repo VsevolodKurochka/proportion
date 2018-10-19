@@ -1,10 +1,14 @@
 <header class="header header_background background" style="background-image: url( {{ post.get_field('section_1_background') }} );">
+	{{ function('vegetable_icon', 'bottom right', 'icon-veg-5.png') }}
 	<div class="container">
-		<h1 class="header__title text-center">{{post.title}}</h1>
+		<div class="text-center">
+			<h1 class="header__title">{{post.title}}</h1>	
+			<p class="header__notation">{{post.get_field('section_1_notation')}}</p>
+		</div>
 		<h2 class="header__subtitle">{{post.get_field('section_1_subtitle')}}</h2>
 		<div class="row background__banner-row background__banner-row_margin">
 			<div class="col-12 col-lg-10">
-				{{ function('banner_form', post.get_field('section_1_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Заказать любимое блюдо"]', 'banner-form_transparent' )}}
+				{{ function('banner_form', post.get_field('section_1_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Заказать любимое блюдо"]', 'banner-form_transparent', 'tag-false' )}}
 			</div>
 		</div>
 	</div>

@@ -4,10 +4,11 @@
 	&-content
 		display: inline-block
 
-	img
-		height: 50px
-
 	+max($md_max)
 		img
 			vertical-align: middle
-			max-height: 28px
+			height: 21px
+
+	+min($md)
+		img
+			height: 50px

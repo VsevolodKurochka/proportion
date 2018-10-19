@@ -1,0 +1,49 @@
+.widget
+
+	color: #666
+
+	a
+		text-decoration: none
+		+transition
+		font-family: $bold
+		color: #666
+		&:hover
+			color: $color-brand-2
+
+	&:not(:last-child)
+		margin-bottom: 15px
+		padding-bottom: 15px
+		border-bottom: 1px solid #ddd
+
+	&__title
+		font-family: $bold
+		color: $color-brand-1
+		font-size: 20px
+		margin-bottom: 15px
+
+		+min($sm)
+			font-size: 22px
+
+		+min($md)
+			font-size: 25px
+
+		+min($lg)
+			font-size: 30px
+	
+	ul
+		list-style: none
+
+		li
+			&:not(:last-child)
+				margin-bottom: 15px
+
+		a
+			display: block
+			
+			line-height: 1.1
+			margin-bottom: 10px
+
+		.post-date
+			display: block
+			color: lighten($color-black, 45%)
+			font-size: 14px

@@ -1,0 +1,37 @@
+.sale
+
+	&__header
+		+relative
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		+size(190px, 140px)
+		+margin-x(auto)
+		padding-right: 20px
+
+		&:before
+			content: ""
+			+absolute(50%, null, null, 50%)
+			transform: translate(-50%, -50%) rotate(-45deg)
+			+size(193px)
+			+bg('../../themes/proportion/static/build/img/sale.svg')
+			opacity: 0.2
+			z-index: -1
+
+	&__price
+		color: $color-brand-1
+		font-family: $bold
+		font-size: 40px
+		line-height: 1
+
+		sup
+			font-size: 50%
+
+	&__body
+		max-width: 210px
+		+margin-x(auto)
+		text-align: center

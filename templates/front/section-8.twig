@@ -1,21 +1,20 @@
 <section class="specific">
 	<div class="container background background_padding-x" style="background-image: url( {{ post.get_field('section_8_image') }} );">
+		{{ function('vegetable_icon', 'top left', 'icon-veg-2.png') }}
 		<div class="specific__header">
 			<h3 class="title-lg">{{post.get_field('section_8_title')}}</h3>
 			<h4 class="title-xs">{{post.get_field('section_8_subtitle')}}</h4>
 		</div>
-		<div class="row">
-			{% for ration in post.get_field('section_8_rations') %}
-				<div class="ration ration_light col-12 col-sm-6">
+		<div class="row specific__row">
+			{% for ration in rations %}
+				<div class="ration ration_light ration_static col-12 col-sm-6">
 					<div class="ration__inner">
+						<a href="{{ration.link}}" class="ration__link"></a>
 						<div class="ration__header">
-							<img src={{ration.image}} class="ration__image">
+							<img src={{ration.get_field('image_bg')|resize(250, 250)}} class="ration__image">
 						</div>
 						<div class="ration__body">
 							<p class="ration__title">{{ration.title}}</p>
-							<div class="ration__content">
-								<p>{{ration.text}}</p>
-							</div>
 						</div>
 					</div>
 				</div>

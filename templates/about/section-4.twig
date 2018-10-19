@@ -1,0 +1,20 @@
+<section class="background background_large benefits" style="background-image: url( {{ front.get_field('section_10_image') }} );">
+	{{ function('vegetable_icon', 'top left', 'icon-veg-9.png') }}
+	<div class="container">
+		<h3 class="title-md background__title">{{front.get_field('section_10_title')}}</h3>
+		<div class="row benefits__row">
+			{% for benefit in front.get_field('section_10_benefits') %}
+				<div class="benefit col-12 col-sm-6 col-md-3">
+					<div class="benefit__number">{{benefit.number}}</div>
+					<div class="benefit__title">{{benefit.title}}</div>
+					<div class="benefit__content">{{benefit.text}}</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row background__banner-row">
+			<div class="col-12 col-lg-10">
+				{{ function('banner_form', front.get_field('section_10_form_title'), '[contact-form-7 id="29" title="Контактная форма 1" button-hidden-text="Заказать услугу"]', 'banner-form_transparent' )}}
+			</div>
+		</div>
+	</div>
+</section>

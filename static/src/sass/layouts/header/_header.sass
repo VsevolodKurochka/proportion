@@ -16,6 +16,74 @@
 		+min($lg)
 			+padding-y(170px, 100px)
 
+	&_single-ration
+		overflow: hidden
+		+padding-y(130px, 70px)
+		+min($sm)
+			+padding-y(170px, 200px)
+
+	&__price
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 1
+
+		&:before
+			content: ""
+			position: absolute
+			right: 0
+			top: 0
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 180px 180px 0
+			border-color: transparent $color-brand-1 transparent transparent
+			z-index: -1
+			+min($sm)
+				border-width: 0 280px 280px 0
+
+		&-content
+			position: absolute
+			top: 40px
+			right: 10px
+			color: $color-white
+			font-family: $bold
+			+min($sm)
+				right: 30px
+
+		&-title
+			text-align: center
+			line-height: 1.1
+			font-style: italic
+			margin-bottom: 10px
+			
+			font-size: 20px
+			+min($sm)
+				font-size: 30px
+
+		&-number
+			line-height: 1
+			color: #fdc434
+			margin-right: 10px
+			font-size: 55px
+			text-align: right
+			min-width: 110px
+			+min($sm)
+				min-width: 150px
+				font-size: 90px
+
+		&-body
+			display: flex
+			align-items: center
+
+		&-text
+			font-size: 18px
+			line-height: 1
+			min-width: 60px
+			+min($sm)
+				font-size: 22px
+				min-width: 80px
+
 	&__title
 		line-height: 1.1
 		font-family: $bold
@@ -52,8 +120,8 @@
 			margin-top: 75px
 
 	&__text
-		line-height: 1.2
 		margin-top: 30px
+		margin-bottom: 30px
 		font-size: 20px
 
 		+min($xs)
@@ -63,7 +131,7 @@
 			font-size: 24px
 
 		+min($md)
-			font-size: 28px
+			font-size: 25px
 
 	&__row_reverse
 		+min($md)
@@ -71,7 +139,7 @@
 
 	&__place
 		position: relative
-		padding-left: 45px
+		padding-left: 35px
 		font-family: $bold
 		color: $color-brand-2
 		font-size: 30px
@@ -88,10 +156,11 @@
 			position: absolute
 			top: -3px
 			right: 100px
+			margin-top: 0
 
 		+min($lg)
-			top: 25px
-			right: 110px
+			top: 30px
+			right: 30px
 
 	&__banner-row
 		+min($sm)
@@ -99,4 +168,4 @@
 			justify-content: center
 
 		+min($lg)
-			margin-top: -215px
+			margin-top: -130px

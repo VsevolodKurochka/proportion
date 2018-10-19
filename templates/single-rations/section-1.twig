@@ -1,5 +1,17 @@
-<header class="header header_background background" style="background-image: url( {{ post.get_field('image_bg') }} );">
-	<div class="container">
+<header class="header header_single-ration background" style="background-image: url( {{ post.get_field('image_bg')|resize(1600,600) }} );">
+  {% if post.get_field('price') %}
+    <div class="header__price">
+      <div class="header__price-content">
+        <p class="header__price-title">Цены от</p>
+        <div class="header__price-body">
+          <p class="header__price-number">{{post.get_field('price')}}</p>
+          <p class="header__price-text">грн<br>в день</p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+	<div class="container text-center">
+		<p class="header__subtitle">Доставка рациона</p>
 		<h1 class="header__title">{{post.title}}</h1>
 	</div>
 </header>

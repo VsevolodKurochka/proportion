@@ -4,23 +4,23 @@
 		{% for week in post.get_field('week') %}
 			<div class="business-prices__group">
 				<div class="title-lg color-brand-2 bold text-center business-prices__group-title">{{week.title}}</div>
-				<div class="row">
+				<div class="row business-prices__row">
 					{% set day_increment = 0 %}
 					{% for day in week.day %}
 						
 						{% set full_size = 0 %}
 						{% for dish_item in day.dishes %}
-							{% set full_size = function('intval', full_size) + function('intval', dish_item.size)%}
+							{% set full_size = function('intval', full_size) + function('intval', dish_item.size) %}
 						{% endfor %}
 
 						{% set day_increment = day_increment + 1 %}
 						<div class="dish col-12 col-sm-6">
 							<div class="dish__inner">
 								<div class="dish__header">
-									<img src={{day.image}} class="dish__header-image">
+									<img src={{day.image|resize(500,200)}} class="dish__header-image">
 									<div class="dish__info">
 										<p class="dish__info-title">День {{day_increment}}</p>
-										<p class="dish__info-size">Всего: {{ full_size }}<sup>г</sup></p>
+										<p class="dish__info-size">Всего: {{ full_size }} г</p>
 									</div>
 								</div>
 								<div class="dish__body">
@@ -28,7 +28,7 @@
 										{% for dish_item in day.dishes %}
 											<li class="dish__list-item">
 												<span>{{dish_item.dish}}</span>
-												<span>{{dish_item.size}}<sup>г</sup></span>
+												<span>{{dish_item.size}} г</span>
 											</li>
 										{% endfor %}
 									</ul>

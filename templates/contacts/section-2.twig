@@ -6,7 +6,7 @@
 				<ul class="contacts__phones">
 					{% for phone in options.telephones %}
 						<li>
-							<a class="contacts__link" href="tel: {{phone.phone}}">{{phone.phone}}</a>
+							<a class="contacts__link" href="tel: {{phone.phone}}">{{phone.phone}} {{phone.time}}</a>
 						</li>
 					{% endfor %}
 				</ul>
